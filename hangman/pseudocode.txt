@@ -1,0 +1,50 @@
+funcion elige_palabra:
+    abrir `archivo`
+    elegir `palabra` de `archivo`
+    regresar `palabra`
+
+funcion siguiente_letra:
+    pedir `letra` al usuario
+    regresar `letra`
+
+funcion generar_palabra_display:
+    declarar `salida` de tipo lista
+    por cada `letra` en la `palabra`:
+        si `letra` esta en `correctas`:
+            agregar `letra` a `salida`
+        si no:
+            agregar `_` a `salida`
+    regresar `salida`
+
+funcion main:
+    declarar `palabra` y asignar valor regresado por 'elige_palabra'
+    declarar lista de letras por adivinar como `por_adivinar`
+    declarar lista de letras adivinadas correctas como `correctas`
+    declarar lista de letras adivinadas incorrectas como `incorrectas`
+    declarar `intentos` igual a cero
+
+    mientras `por_adivinar` sea mayor a 0 y `intentos` < 6:
+        declarar `letra` y asignar valor regresado por 'siguiente_letra'
+
+        si `letra` esta en `correctas` o en `incorrectas`:
+            mostrar mensaje de que ya se adivino
+            continuar con el siguiente ciclo
+
+        si 'letra' esta en `por_adivinar`:
+            quitar `letra` de `por_adivinar`
+            agregar `letra` a `correctas`
+        si no: 
+            agregar `letra` a `incorrectas`
+            incrementar `intentos` por 1
+
+        declarar `palabra_display` y asignar valor regresador por `generar_palabra_display`
+        desplegar `palabra_display`
+        desplegar oportunidades restantes (`intentos`-6)
+
+    si `intentos` menor a 6:
+        desplegar mensaje de victoria
+    si no:
+        deplegar mensaje de game over y la palabra correcta
+
+ejecutar `main`
+
