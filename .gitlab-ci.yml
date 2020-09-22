@@ -13,7 +13,7 @@ test:
 pages:
     script:
         - cd docs
-        - hugo -d ../public
+        - hugo --verbose --verboseLog --destination ../public --baseURL https://gallegosj89.gitlab.io/webapps/
     artifacts:
         paths:
             - public
