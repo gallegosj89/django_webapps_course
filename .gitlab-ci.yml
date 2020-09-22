@@ -13,7 +13,7 @@ test:
 pages:
     script:
         - cd docs
-        - hugo -d ../public --enableGitInfo
+        - hugo -d ../public
     artifacts:
         paths:
             - public
