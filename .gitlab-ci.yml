@@ -16,6 +16,6 @@ pages:
         - hugo
     artifacts:
         paths:
-            - public
+            - docs/public
     only:
         - master
