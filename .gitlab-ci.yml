@@ -13,9 +13,9 @@ test:
 pages:
     script:
         - cd docs
-        - hugo
+        - hugo ../public --enableGitInfo
     artifacts:
         paths:
-            - docs/public
+            - public
     only:
         - master
