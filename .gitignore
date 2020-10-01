@@ -1,4 +1,4 @@
 public/
 docs/public/
 */venv/
-*/.vscode/
+.vscode/

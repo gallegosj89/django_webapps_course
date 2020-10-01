@@ -1,5 +1,5 @@
 ---
-title: Setup
+title: Configuración
 weight: 1
 ---
 
