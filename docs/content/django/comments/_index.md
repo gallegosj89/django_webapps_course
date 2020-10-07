@@ -163,7 +163,7 @@ Ahora vamos a `blog/templates/blog/post_detail.html` y antes de la línea `{% fo
 
 Si quieres ir a los detalles del post, deberías ver este error:
 
-![1801-url_error](/images/1801-url_error.png)
+![1801-url_error](1801-url_error.png)
 
 Ahora sabemos como arreglarlo. Ve a `blog/urls.py` y agrega esto a `urlpatterns`:
 
@@ -173,7 +173,7 @@ path('post/<int:pk>/comment', views.add_comment_to_post, name='add_comment_to_po
 
 Refresca la página y ahora tenemos un error diferente.
 
-![1802-views_error](/images/1802-views_error.png)
+![1802-views_error](1802-views_error.png)
 
 Para agregar este error, agrega esto a `blog/views.py`:
 
@@ -200,11 +200,11 @@ from .forms import PostForm, CommentForm
 
 Ahora vamos a los detalles de la página y deberíamos ver el botón "Add Comment":
 
-![1803-add_comment_button](/images/1803-add_comment_button.png)
+![1803-add_comment_button](1803-add_comment_button.png)
 
 Sin embargo, cuando des click en el botón verás:
 
-![1804-template_error](/images/1804-template_error.png)
+![1804-template_error](1804-template_error.png)
 
 Como el error nos dice, la plantilla no existe aún. Entonces vamos a crear una en `blog/templates/blog/add_comment_to_post.html` y agregar el siguiente código:
 

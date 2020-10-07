@@ -10,7 +10,7 @@ En este ejercicio, para poner a prueba sus habilidades, se construirá un script
 Los pasos que debe de cumplir este script son:
 
 1. Seguir las reglas del juego.
-2. Cargar una palabra de forma aleatoria desde el diccionario [`lemario.txt`](https://drive.google.com/file/d/1G-p_BsJp_urh2a6wDhnuvw3_ovIHqDTb/view?usp=sharing).
+2. Cargar una palabra de forma aleatoria desde el diccionario [`lemario.txt`](lemario.txt).
 3. Crear la lógica para adivinar la palabra y presentar esta información al usuario en todo momento.
 4. Mantener el seguimiento de las letras adivinadas por el usuario y sus errores, es decir, si el usuario adivina con una letra antes usada no se debe penalizar.
 5. Cuando el usuario gane o pierda, dejar que decida si quiere jugar de nuevo.

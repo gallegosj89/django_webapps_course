@@ -28,7 +28,7 @@ Para instalar Bootstrap tienes que añadir esto al `<head>` de tu fichero `.html
 
 Esto no añade ningún fichero a tu proyecto. Simplemente apunta a ficheros que existen en Internet. Adelante, abre tu sitio web y actualiza la página. Aquí está:
 
-![1301-bootstrap1](/images/1301-bootstrap1.png)
+![1301-bootstrap1](1301-bootstrap1.png)
 
 Se ve mucho mejor.
 
@@ -131,7 +131,7 @@ Ahora tu fichero debería tener este aspecto:
 
 De acuerdo, guarda el fichero y actualiza el sitio.
 
-![1302-color2](/images/1302-color2.png)
+![1302-color2](1302-color2.png)
 
 Demos un poco de aire a nuestro sitio web y aumentemos también el margen en el lado izquierdo:
 
@@ -143,7 +143,7 @@ body {
 
 Añade esto a tu CSS, guarda el fichero y mira cómo funciona.
 
-![1303-margin2](/images/1303-margin2.png)
+![1303-margin2](1303-margin2.png)
 
 Personaliza la tipografía del título, pega esto en la sección `<head>` del fichero `blog/templates/blog/post_list.html`:
 
@@ -163,7 +163,7 @@ h2 a {
 }
 ```
 
-![1304-font](/images/1304-font.png)
+![1304-font](1304-font.png)
 
 Como se mencionó anteriormente, CSS tiene un concepto de clases que básicamente permite nombrar una parte del código HTML y aplicar estilos sólo a esta parte, sin afectar a otras. Es muy útil si tienes dos divs que hacen algo muy diferente (como el encabezado y la entrada) y no quieres que tengan el mismo aspecto.
 
@@ -282,7 +282,7 @@ en `blog/templates/blog/post_list.html` por esto:
 
 Guarda los ficheros y actualiza tu sitio.
 
-![1305-final](/images/1305-final.png)
+![1305-final](1305-final.png)
 
 Bien!, se ve mucho mejor. En realidad el código que acabamos de pegar no es tan difícil de entender y deberías ser capaz de entender la mayoría sólo con leerlo.
 

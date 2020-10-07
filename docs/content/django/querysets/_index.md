@@ -266,7 +266,7 @@ Para imprimir una variable en una plantilla de Django, utilizamos llaves dobles 
 
 Prueba esto en tu plantilla `blog/templates/blog/post_list.html`. Reemplaza todo desde el segundo `<div>` hasta el tercer`</div>` con `{{ posts }}`, guarda el archivo y actualiza la página para ver los resultados:
 
-![1201-step1](/images/1201-step1.png)
+![1201-step1](1201-step1.png)
 
 Como puedes ver, todo lo que obtenemos es esto:
 
@@ -282,7 +282,7 @@ Esto significa que Django lo entiende como una lista de objetos. Recuerda de la 
 
 Prueba esto en tu plantilla.
 
-![1202-step2](/images/1202-step2.png)
+![1202-step2](1202-step2.png)
 
 Funciona. Pero queremos que se muestren cómo los posts estáticos que creamos anteriormente en la práctica de **Introducción a HTML**. Puedes mezclar HTML y template tags. Nuestro body se verá así:
 
@@ -302,7 +302,7 @@ Funciona. Pero queremos que se muestren cómo los posts estáticos que creamos a
 
 Todo lo que pones entre `{% for %}` y `{% endfor %}` se repetirá para cada objeto en la lista. Actualiza tu página:
 
-![1203-step3](/images/1203-step3.png)
+![1203-step3](1203-step3.png)
 
 ¿Has notado que utilizamos una notación diferente esta vez `{{ post.title }}` ó `{{ post.text }}`? Estamos accediendo a datos en cada uno de los campos definidos en nuestro modelo `Post`. Además, el `|linebreaksbr` está dirigiendo el texto de los posts a través de un filtro para convertir saltos de línea en párrafos.
 

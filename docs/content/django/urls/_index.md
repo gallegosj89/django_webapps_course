@@ -9,7 +9,7 @@ Vamos a construir nuestra primera página web -- una página de inicio para nues
 
 Una URL en este caso particular es simplemente una dirección web, puedes ver una URL cada vez que visitas cualquier sitio web - es visible en la barra de direcciones de tu navegador (Sí, `http://127.0.0.1:8000` es una URL. Y `http://uabc.mx` es también una URL).
 
-![0901-url](/images/0901-url.png)
+![0901-url](0901-url.png)
 
 Cada página en Internet necesita su propia URL. De esta manera tu aplicación sabe lo que debe mostrar a un usuario que abre una URL. En Django se usa algo llamado `URLconf` (configuración de URL), un conjunto de patrones que Django intentará hacer coincidir con la dirección URL recibida para encontrar la vista correcta.
 
@@ -89,7 +89,7 @@ La ultima parte, `name='post_list'`, es el nombre de la URL que se usara para id
 
 Si intentas visitar <http://127.0.0.1:8000/> en este momento, encontrarás un mensaje del tipo 'web page not available'. Esto es porque el servidor (recordaste ejecutar `runserver` ?) no esta corriendo. Hecha un vistazo a la ventana de tu servidor para ver el porque.
 
-![0902-error1](/images/0902-error1.png)
+![0902-error1](0902-error1.png)
 
 Tu consola muestra un error, pero no es para preocuparse - es de hecho muy util. En este caso esta diciendo que **no attribute 'post_list'**. Ese es el nombre de la _vista_ que Django está tratando de encontrar y usar, pero no la hemos creado todavía. En este punto tu `/admin/` tampoco funcionará. No pasa nada, esto lo solucionaremos en la siguiente parte.
 
@@ -130,7 +130,7 @@ Guarda el archivo, dirígete a <http://127.0.0.1:8000/> y veamos lo que tenemos 
 
 ¡Otro error! Leamos lo que está pasando ahora:
 
-![0903-error2](/images/0903-error2.png)
+![0903-error2](0903-error2.png)
 
 Esto indica que el servidor esta corriendo de nuevo, al menos, pero todavía no se ve bien. Esta es una pagina de error creada por el servidor, nada de que asustarnos - justo como los errores en la consola estos de hecho nos pueden ser muy útiles. Puedes leer que el `TemplateDoesNotExist`.
 
@@ -168,7 +168,7 @@ Mira cómo se ve su sitio web ahora: [http://localhost:8000/](http://localhost:8
 
 > Si todavía tienes un error `TemplateDoesNotExists`, intenta reiniciar el servidor. Ve a la línea de comandos, detén el servidor pulsando Ctrl + C (teclas Control y C juntas) y comienza de nuevo mediante la ejecución del comando `python manage.py runserver`.
 
-![1001-step1](/images/1001-step1.png)
+![1001-step1](1001-step1.png)
 
 Ningún error. Sin embargo, por ahora, tu sitio web no está publicando nada excepto una página en blanco, porque la plantilla también está vacía. Tenemos que arreglarlo.
 
@@ -185,7 +185,7 @@ Añade lo siguiente a tu archivo de plantilla:
 
 ¿Cómo luce ahora tu sitio web? Haz click para ver: [http://localhost:8000/](http://localhost:8000/)
 
-![1002-step3](/images/1002-step3.png)
+![1002-step3](1002-step3.png)
 
 Funcionó.
 
@@ -215,7 +215,7 @@ Por ejemplo, puedes ponerle un título a la página web dentro de la `<head>`, a
 
 Guarda el archivo y actualiza tu página.
 
-![1003-step4](/images/1003-step4.png)
+![1003-step4](1003-step4.png)
 
 ¿Observas cómo el navegador ha comprendido que "DAW's blog" es el título de tu página? Ha interpretado `<title>DAW's blog</title>` y colocó el texto en la barra de título de tu navegador (también se utilizará para marcadores y así sucesivamente).
 
@@ -281,7 +281,7 @@ Aquí hemos creado tres secciones `div`.
 
 Nos da este efecto:
 
-![1004-step6](/images/1004-step6.png)
+![1004-step6](1004-step6.png)
 
 Pero hasta el momento, nuestra plantilla sólo muestra exactamente la **misma** información -- considerando que antes hablábamos de plantillas que nos permitían mostrar información **diferente** en el **mismo formato**.
 

@@ -92,13 +92,13 @@ Y finalmente guardamos nuestros cambios. Ve a la consola y ejecuta estos comando
 
 Visita [GitHub.com](https://www.github.com) y registra una nueva cuenta de usuario gratuita. Luego, crea un nuevo repositorio con el nombre "my-first-blog". Deja desmarcada la opción "Initialise with a README", deja la opción .gitignore en blanco (lo hemos hecho a mano) y deja la licencia como "None".
 
-![0801-new_github_repo](/images/0801-new_github_repo.png)
+![0801-new_github_repo](0801-new_github_repo.png)
 
 > **Nota** El nombre `my-first-blog` es importante. Podrías elegir otra cosa, pero va a aparecer muchas veces en las instrucciones que siguen y tendrías que sustituirlo cada vez. Probablemente sea más sencillo quedarte con el nombre `my-first-blog`.
 
 En la próxima pantalla verás la URL para clonar tu repositorio. Elige la versión "HTTPS", cópiala y en un momento la pegaremos en la consola:
 
-![0802-github_get_repo_url_screenshot](/images/0802-github_get_repo_url_screenshot.png)
+![0802-github_get_repo_url_screenshot](0802-github_get_repo_url_screenshot.png)
 
 Ahora tenemos que conectar el repositorio Git de tu ordenador con el que está en GitHub.
 
@@ -136,13 +136,13 @@ Es hora de registrar una cuenta gratuita de tipo "Beginner" en PythonAnywhere.
 
 Esto es algo que solo ocupas realizar una vez. Cuando te hayas registrado en PythonAnywhere, serás tomado a tu página principal (Dashboard). Encuentra el enlace cerca de la esquina derecha de la pagina que te lleva a la pagina de cuenta (Account), luego selecciona la pestaña con el nombre "API token", y presiona el botón que dice "Create new API token".
 
-![0803-pythonanywhere_create_api_token](/images/0803-pythonanywhere_create_api_token.png)
+![0803-pythonanywhere_create_api_token](0803-pythonanywhere_create_api_token.png)
 
 #### Configurando nuestro sitio en PythonAnywhere
 
 Regresa a la pagina principal [Dashboard](https://www.pythonanywhere.com/) haciendo click en el logo (la viborita), y elige la opcion de iniciar una nueva consola de "Bash" — esa el version de la línea de comando de PythonAnywhere, justo como la que tienes en tu maquina virtual.
 
-![0804-pythonanywhere_bash_console](/images/0804-pythonanywhere_bash_console.png)
+![0804-pythonanywhere_bash_console](0804-pythonanywhere_bash_console.png)
 
 Desplegar una aplicación web en PythonAnywhere significar jalar (pull) el código que tenemos en nuestro repositorio de GitHub, y entonces configurar PythonAnywhere para reconocerlo e iniciar a servirlo como aplicación web. Hay maneras manuales de como hacerlo, pero PythonAnywhere provee una herramienta de ayuda que lo hará por ti. Vamos a instalarla primero:
 

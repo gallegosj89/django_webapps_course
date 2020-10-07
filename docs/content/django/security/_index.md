@@ -108,7 +108,7 @@ def publish(self):
 
 Ahora finalmente podemos usarlo. Y de nuevo al publicar el post, somos redirigidos inmediatamente a la página `post_detail`.
 
-![1601-publish2](/images/1601-publish2.PNG)
+![1601-publish2](1601-publish2.png)
 
 ## Eliminar post
 
@@ -143,7 +143,7 @@ Y en este momento, después de eliminar un post, queremos ir a la página web co
 
 Probémoslo, ve a la página con los post e intentemos eliminarlo.
 
-![1602-delete3](/images/1602-delete3.PNG)
+![1602-delete3](1602-delete3.PNG)
 
 ## Asegura tu sitio
 

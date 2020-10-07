@@ -217,7 +217,7 @@ Debes estar en el directorio que contiene el archivo `manage.py` (el directorio 
 
 Ahora todo lo que debes hacer es verificar que tu sitio esté corriendo - abre tu navegador (Firefox, Chrome, Safari, Internet Explorer o el que utilices) e ingresa la dirección `http://127.0.0.1:8000/`, se debe ver algo como esto:
 
-![It worked!](/images/0501-it_worked3.png)
+![It worked!](0501-it_worked3.png)
 
 Mientras el servidor web esta corriendo, no veras el prompt para escribir nuevos comandos. La terminal aceptara nuevo texto pero no ejecutara ningún comando. Esto es porque el servidor web corre continuamente para escuchar las peticiones entrantes.
 

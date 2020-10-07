@@ -131,7 +131,7 @@ Tenemos que crear un archivo `post_edit.html` en el directorio `blog/templates/b
 -   necesitamos un botón `Guardar`. Lo hacemos con un botón HTML: `<button type='submit'>Save</button>`
 -   y finalmente justo después de la apertura de `<form...>` necesitamos agregar `{% csrf_token %}`. Esto es muy importante ya que hace que tus formularios sean seguros, Django se quejará si te olvidas de esta parte cuando intentes guardar el formulario.
 
-![1501-csrf2](/images/1501-csrf2.png)
+![1501-csrf2](1501-csrf2.png)
 
 Bueno, vamos a ver cómo quedará el HTML en `post_edit.html`:
 
@@ -147,7 +147,7 @@ Bueno, vamos a ver cómo quedará el HTML en `post_edit.html`:
 
 Es hora de actualizar.
 
-![1502-new_form2](/images/1502-new_form2.png)
+![1502-new_form2](1502-new_form2.png)
 
 Un momento. Si escribes algo en los campos `títle` y `text` y tratas de guardar los cambios - ¿qué pasará?
 
@@ -233,7 +233,7 @@ Probablemente has visto que no hemos definido la fecha de publicación. Vamos a 
 
 > Como recientemente hemos utilizado la interfaz de administrador de Django, el sistema piensa que hemos iniciado sesión. Hay algunas situaciones que podrían llevarnos a desconectarnos (cerrando el navegador, reiniciando la base de datos, etc.). Si estás recibiendo errores al crear un post que indican la falta de inicio de sesión de usuario, dirígete a la página de administración `http://127.0.0.1:8000/admin` e inicia sesión nuevamente. Esto resolverá el problema temporalmente. Hay un arreglo permanente en una sección más adelante.
 
-![1504-post_create_error](/images/1504-post_create_error.png)
+![1504-post_create_error](1504-post_create_error.png)
 
 ## Validación de formularios
 
@@ -241,7 +241,7 @@ Ahora, veamos qué tan bueno es Django forms. Un post del blog debe tener los ca
 
 Trata de guardar el formulario sin `title` y `text`. Adivina qué pasará!.
 
-![1503-form_validation2](/images/1503-form_validation2.png)
+![1503-form_validation2](1503-form_validation2.png)
 
 Django se encarga de validar que todos los campos en el formulario estén correctos.
 
@@ -314,11 +314,11 @@ form = PostForm(instance=post)
 
 Dirígete a la página `post_detail`. Debe haber ahí un botón para editar en la esquina superior derecha:
 
-![1505-edit_button2](/images/1505-edit_button2.png)
+![1505-edit_button2](1505-edit_button2.png)
 
 Al dar click ahí, debes ver el formulario con nuestro post del blog:
 
-![1506-edit_form2](/images/1506-edit_form2.png)
+![1506-edit_form2](1506-edit_form2.png)
 
 Siéntete libre de cambiar el título o el texto y guarda los cambios.
 

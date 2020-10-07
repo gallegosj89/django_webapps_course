@@ -152,7 +152,7 @@ Para explicar `pk=post.pk` debemos saber que `pk` es abreviatura de _primary key
 
 Ahora cuando vayamos a: <http://127.0.0.1:8000/> tendremos un error (como era de esperar, ya que no tenemos una dirección URL o una _view_ para `post_detail`). Se verá así:
 
-![1401-no_reverse_match2](/images/1401-no_reverse_match2.png)
+![1401-no_reverse_match2](1401-no_reverse_match2.png)
 
 ### Creando una URL a post_detail
 
@@ -182,7 +182,7 @@ Eso significa que si entras en `http://127.0.0.1:8000/post/5/` en tu navegador, 
 
 Bien, hemos añadido un nuevo patron de URL a `blog/urls.py`. Actualiza la página: <http://127.0.0.1:8000/> ¡Boom! El servidor a dejado de funcionar. Mira la consola — como era de esperarse, hay otro error.
 
-![1402-attribute_error2](/images/1402-attribute_error2.png)
+![1402-attribute_error2](1402-attribute_error2.png)
 
 ¿Te acuerdas del próximo paso? Agregar una view.
 
@@ -198,11 +198,11 @@ Post.objects.get(pk=pk)
 
 Pero este código tiene un problema. Si no hay ningún `Post` con `llave primaria` (`pk`) tendremos un grave error.
 
-![1403-does_not_exist2](/images/1403-does_not_exist2.png)
+![1403-does_not_exist2](1403-does_not_exist2.png)
 
 No queremos eso, por supuesto, Django viene con algo que se encargará de ese problema por nosotros: `get_object_or_404`. En caso de que no haya ningún `Post` con el dado `pk` se mostrará una más agradable página (`Page Not Found 404`).
 
-![1404-404_2](/images/1404-404_2.png)
+![1404-404_2](1404-404_2.png)
 
 La buena noticia es que puedes crear tu propia página `Page Not Found` y diseñarla como desees. Pero por ahora no es tan importante, así que lo omitiremos.
 
@@ -222,11 +222,11 @@ def post_detail(request, pk):
 
 Sí. Es hora de actualizar la página: <http://127.0.0.1:8000/>
 
-![1405-post_list2](/images/1405-post_list2.png)
+![1405-post_list2](1405-post_list2.png)
 
 ¡Funcionó! Pero ¿qué pasa cuando haces click en un enlace en el título del post?
 
-![1406-template_does_not_exist2](/images/1406-template_does_not_exist2.png)
+![1406-template_does_not_exist2](1406-template_does_not_exist2.png)
 
 Otro error. Pero ya sabemos cómo lidiar con eso, tenemos que añadir una plantilla.
 
@@ -250,7 +250,7 @@ Una vez más estamos extendiendo `base.html`. En el bloque `content` queremos mo
 
 Bien, podemos actualizar nuestra página y ver si `Page Not Found` se ha ido.
 
-![1407-post_detail2](/images/1407-post_detail2.png)
+![1407-post_detail2](1407-post_detail2.png)
 
 ¡Funciona!
 

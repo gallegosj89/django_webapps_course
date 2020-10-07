@@ -24,11 +24,11 @@ Una vez adquiridas la/las imágenes de Debian y tener VirtualBox instalado. Se p
 
 1.  En la barra de tareas de VirtualBox se le da click en el icono de `New`.
 
-    ![barra de herramientas de VB](/images/0107-vb_menu.png)
+    ![barra de herramientas de VB](0107-vb_menu.png)
 
 2.  Se abrirá una nueva ventana que indica `Create Virtual Machine`, los parámetros a introducir se muestran en la imagen a continuación:
 
-    ![VB create window](/images/0108-vb_create.png)
+    ![VB create window](0108-vb_create.png)
 
     > Note. En caso de que la ventana no sea iguala la imagen anterior es probable que el menú avanzado no este activado, para activarlo oprima el botón **Expert Mode**.
 
@@ -36,19 +36,19 @@ Una vez adquiridas la/las imágenes de Debian y tener VirtualBox instalado. Se p
 
 3.  La siguiente ventana tendrá como titulo `Create Virtual Hard Disk`, se configurará de la siguiente manera:
 
-    ![VB create HDD](/images/0109-vb_hdd.png) Al terminar oprima el botón **Create**.
+    ![VB create HDD](0109-vb_hdd.png) Al terminar oprima el botón **Create**.
 
 4.  Ahora de nuevo en la ventana principal, oprima el icono `Settings` (engrane) de la barra de herramientas. En la nueva ventana ir a la pestaña `Advanced`; en esta ventana fijar los elementos `Shared Clipboard` y `Drag'n'Drop` a _`Bidirectional`_. Esto se muestra en la siguiente imagen:
 
-    ![VB bidirectional setting](/images/0110-vb_bidirec.png)
+    ![VB bidirectional setting](0110-vb_bidirec.png)
 
 5.  En esta misma ventana de `Settings` ir al menú de `Storage` del lado izquierdo. Seleccionar el elemento nombrado como `Empty` debajo de `Controller: IDE`. Al lado derecho de la ventana aparecerá un icono de disco, hacer click en el y después en `Choose Virtual Optical Disk File...`. En la nueva ventana buscan la imagen `iso` del disco de instalación de Debian:
 
-    ![VB iso selection](/images/0111-vb_iso.png)
+    ![VB iso selection](0111-vb_iso.png)
 
     Al hacerlo la ventana se verá de la siguiente manera:
 
-    ![VB disk window](/images/0112-vb_disk.png)
+    ![VB disk window](0112-vb_disk.png)
 
     Dar click en el botón **OK**.
 
@@ -56,7 +56,7 @@ Una vez adquiridas la/las imágenes de Debian y tener VirtualBox instalado. Se p
 
 7.  Una vez iniciada la máquina virtual, para hacer la vista más cómoda ir al menú `View -> Scalated Mode` y después maximizar la ventana.
 
-    ![VB scalate](/images/0113-vm_scalate.png)
+    ![VB scalate](0113-vm_scalate.png)
 
 8.  Ahora con la máquina virtual corriendo elegir la opción `Graphical Install` y la instalación de GNU/Linux distribución Debian comenzará.
 
@@ -132,7 +132,7 @@ En este punto la máquina debe de estar instalada de manera satisfactoria y al r
 
 Lo primero será crear un acceso directo a la terminal, para esto ir a la esquina superior izquierda `Activities -> Show applications -> Settings`.
 
-![Gnome settings location](/images/0115-vm_settings.png)
+![Gnome settings location](0115-vm_settings.png)
 
 Ahora en la ventana de `Settings` ir a `Keyboard`, hacer scroll hasta el final y oprimir el botón **+**. Ahora en la ventana de `Add custom shortcut` introducir los siguientes datos:
 

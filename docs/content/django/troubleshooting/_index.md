@@ -17,7 +17,7 @@ sudo apt install git python3 python3-pip python3-virtualenv
 
 3. Clonar el repositorio remoto. Ir a su cuenta de Github y copiar la dirección de su repositorio. Ahora utilizar el siguiente comando en su maquina virtual. Modificando el URL por el correcto de su repositorio, el `django-daw` al final del comando indica que este es el nombre que se le dará a la carpeta del proyecto.
 
-![RP-github](/images/RP-github.PNG)
+![RP-github](RP-github.PNG)
 
 ```bash
 git clone https://github.com/gallegosj89/my-first-blog.git django-daw
@@ -47,5 +47,3 @@ python manage.py runserver
 ```
 
 Ya con esto debería de funcionar su proyecto de manera normal. Como se mencionó antes, solo que hayas tenido respaldado en tu repositorio remoto. Otra cosa es que la base de datos no se respalda en el repositorio, por lo que tendrás que crear nuevos posts.
-
-[1]: images/RP-github.png

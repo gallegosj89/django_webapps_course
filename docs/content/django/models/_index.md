@@ -195,7 +195,7 @@ Como puedes ver, importamos (incluimos) el modelo Post definido en la práctica 
 
 De acuerdo, es hora de ver tu modelo Post. Recuerda ejecutar `python manage.py runserver` en la consola para correr el servidor web. Ve al navegador y teclea la dirección <http://localhost:8000/admin/>. Verás una página de ingreso como la que sigue:
 
-![0701-login_page2](/images/0701-login_page2.png)
+![0701-login_page2](0701-login_page2.png)
 
 Para poder ingresar deberás crear un _super-usuario_ - un usuario que tiene control sobre todo lo que hay en el sitio. Vuelve hacia atrás a tu línea de comandos (**ctrl+c**) y teclea `python manage.py createsuperuser`, presiona **Enter**.
 
@@ -214,12 +214,12 @@ Cuando sea necesario, teclea tu nombre de usuario (en minúsculas, sin espacios)
 
 Vuelve a tu navegador e ingresa con las credenciales de super usuario que elegiste, ahora deberías poder ver el panel de administración de Django.
 
-![0702-django_admin3](/images/0702-django_admin3.png)
+![0702-django_admin3](0702-django_admin3.png)
 
 Ve a _Posts_ y experimenta un poco con esto. Agrega cinco o seis posts del blog. No te preocupes por el contenido - puedes simplemente copiar y pegar texto de está práctica en el contenido de tus posts para ahorrar tiempo.
 
 Asegúrate de que por lo menos dos o tres posts (pero no todos) tienen la fecha de publicación. Será útil luego.
 
-![0703-edit_post3](/images/0703-edit_post3.png)
+![0703-edit_post3](0703-edit_post3.png)
 
 Si quieres saber más sobre el administrador de Django, puedes visitar la [documentación de Django](https://docs.djangoproject.com/en/2.1/ref/contrib/admin/).
