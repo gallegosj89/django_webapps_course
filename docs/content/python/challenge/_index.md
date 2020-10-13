@@ -1,5 +1,5 @@
 ---
-title: Challenge
+title: Un pequeño reto
 weight: 10
 ---
 
@@ -16,4 +16,6 @@ Los pasos que debe de cumplir este script son:
 5. Cuando el usuario gane o pierda, dejar que decida si quiere jugar de nuevo.
 6. En lugar de mostrarle al usuario "Tienes 4 respuestas incorrectas restantes.", mostrar una imagen o representación del "Ahorcado". (Esto es un reto adicional, realizar primero la lógica del juego.)
 
-> Pistas: entrada del teclado, manejo de archivos (with/open), encoding, generador de número aleatorio, listas (elemento _in_ lista), sets, convertir todo a mayusculas/minusculas. La solución será mucho mas limpia si se utilizan funciones.
+{{%notice secondary%}}
+**PISTAS:** entrada del teclado, manejo de archivos (with/open), encoding, generador de número aleatorio, listas (elemento _in_ lista), sets, convertir todo a mayusculas/minusculas. La solución será mucho mas limpia si se utilizan funciones.
+{{%/notice%}}

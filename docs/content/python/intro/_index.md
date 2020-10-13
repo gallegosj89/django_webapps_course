@@ -1,5 +1,5 @@
 ---
-title: Que es Python y como se usa
+title: Qué es Python
 weight: 1
 ---
 
@@ -11,14 +11,40 @@ Python se originó en la década de 1980 y su objetivo principal es ser legible 
 
 Para empezar a jugar con Python, tenemos que abrir una línea de comandos en nuestra computadora. Ya sabes cómo hacerlo, lo aprendiste en la práctica anterior.
 
-Una vez abierta, sigue las siguientes instrucciones. Queremos abrir una consola de Python, así que escribe `python` en Windows o `python3` en OS x/Linux y pulsa **Enter**.
+Una vez abierta, sigue las siguientes instrucciones. Queremos abrir una consola de Python, así que escribe `python` y pulsa **Enter**.
+
+{{< tabs >}}
+{{< tab "Git Bash" >}}
 
 ```python
-$ python3
-Python 3.6.1 (...)
+$ python
+Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```python
+> python
+Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```python
+$ python
+Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Primer comando en Python
 
@@ -471,45 +497,124 @@ Para salir del intérprete de Python que hemos estado usando, simplemente escrib
 
 ```python
 >>> exit()
-$
 ```
 
 Esto te llevará de vuelta a la línea de comandos.
 
-Anteriormente, instalamos un editor de código _Sublime text_. Tendremos que abrir el editor ahora y escribir algo de código en un archivo nuevo:
+Anteriormente, instalamos un editor de código _Visual Studio Code_. Ahora vamos a abrir el editor y al mismo tiempo crear un archivo en nuestro directorio base (`~`):
+
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+code ~/intro.py
+```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+code ~/intro.py
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+code ~/intro.py
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+Dentro de este archivo vamos a escribir el programa básico cuando se está aprendiendo un lenguaje de programación.
 
 ```python
 print('Hello world, in Python!')
 ```
 
-> Nota: Deberías notar una de las cosas más geniales de los editores de código: los colores. En la consola de Python, todo era del mismo color, pero ahora puedes ver que la función `print` es de un color diferente del `string` que está dentro de ella. Eso se denomina "syntax highlighting" (en español, resaltado de sintaxis), y es una gran ayuda cuando estás programando. Presta atención a los colores, y obtendrás una pista cuando te olvides de cerrar un `string` o cometes un error al escribir una palabra clave (como el `def` en una función, que veremos abajo). Esta es una de las razones por las cuales usar un editor de código.
+{{%notice%}}
+Es bueno tomar en cuenta algunas de las cosas geniales de los editores de código como por ejemplo _el resaltado de sintaxis_. En la consola de Python, todo era del mismo color, pero ahora puedes ver que la función `print` es de un color diferente del `string` que está dentro de ella. Eso se denomina **syntax highlighting** (en español, _resaltado de sintaxis_), y es una gran ayuda cuando estás programando. Presta atención a los colores, y obtendrás una pista cuando te olvides de cerrar un `string` o cometes un error al escribir una palabra clave (como el `def` en una función, que veremos abajo). Esta es una de las grandes razones por las cuales se debe usar un editor de código.
+{{%/notice%}}
 
-Obviamente, ahora eres un desarrollador Python muy experimentado, así que eres libre de escribir algo del código que has aprendido hoy.
+Ahora tenemos que guardar el archivo y asignarle un nombre descriptivo. Vamos a llamar al archivo `intro.py` y guardarlo en tu directorio base. Podemos nombrar el archivo de cualquier manera que queramos, lo importante aquí es asegurarse que tenga la extensión `.py`, esto le indica a nuestra máquina que este es un archivo ejecutable de Python y que Python puede correrlo.
 
-Ahora tenemos que guardar el archivo y asignarle un nombre descriptivo. Vamos a llamar al archivo `python_intro.py` y guardarlo en tu escritorio. Podemos nombrar el archivo de cualquier manera que queramos, lo importante aquí es asegurarse que el archivo finalice con `.py`, esto le indica a nuestra computadora que este es un archivo ejecutable de Python y que Python puede correrlo.
-
-Con el archivo guardado, es hora de ejecutarlo. Utilizando las habilidades que has aprendido en la sección de línea de comandos, utiliza la terminal para cambiar los directorios e ir al escritorio.
+Con el archivo guardado, es hora de ejecutarlo. Utilizando las habilidades que has aprendido en la sección de línea de comandos, utiliza la terminal para ir a tu directorio base.
 
 El comando se verá algo como esto:
 
-```bash
-cd ~/Desktop
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+cd ~/
 ```
 
-Si te quedas atascado, sólo pide ayuda (pero recuerda que lo vimos en la práctica 2). Y luego usa Python para ejecutar el código en el archivo como sigue:
+{{< /tab >}}
+{{< tab "Windows" >}}
 
-```python
-$ python3 python_intro.py
+```sh
+cd ~/
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+cd ~/
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+Si te quedas atascado, sólo pide ayuda (pero recuerda que lo vimos en la sección de la [línea de comandos]({{< ref "../../getting-started/terminal/" >}}). Y luego usa Python para ejecutar el código en el archivo como sigue:
+
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
 Hello world, in Python!
 ```
 
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hello world, in Python!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hello world, in Python!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 Ejecutaste tu primer programa de Python desde un archivo. Ahora puedes moverte a una herramienta esencial en la programación.
+
+{{%notice tip%}}
+**Tip**
+\
+Visual Studio Code cuenta con una terminal integrada que puedes abrir con el atajo de teclado <code>Ctrl + `</code>, se abrirá por defecto en el directorio actual desde donde se haya cargado.
+{{%/notice%}}
+
+{{%notice tip%}}
+**Tip**
+\
+Para cambiar la consola que utilizará _Visual Studio Code_ en Windows, ejecuta el atajo de teclado `Ctrl + Shift + P`, y busca la opción `Select Default Shell`. Dentro de esta opción podras elegir entre las consolas disponibles en el sistema - por ejemplo _Git Bash_.
+{{%/notice%}}
 
 ## If...elif...else
 
 Un montón de cosas en el código sólo son ejecutadas cuando se cumplen las condiciones dadas. Por eso Python tiene algo llamado sentencias `if`.
 
-Reemplaza el código en tu archivo python_intro.py por esto:
+Reemplaza el código en tu archivo intro.py por esto:
 
 ```python
 if 3 > 2:
@@ -517,14 +622,40 @@ if 3 > 2:
 
 Si lo guardáramos y lo ejecutáramos, veríamos un error como este:
 
-```python
-$ python3 python_intro.py
-File "python_intro.py", line 2
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+File "intro.py", line 2
          ^
 SyntaxError: unexpected EOF while parsing
 ```
 
-Python espera que le demos más instrucciones que se supone serán ejecutadas si la condición `3 > 2` resulta ser verdadera (o `True` en este caso). Intentemos hacer que Python imprima `It works!`. Cambia tu código en el archivo `python_intro.py` para que se vea como esto:
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+File "intro.py", line 2
+         ^
+SyntaxError: unexpected EOF while parsing
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+File "intro.py", line 2
+         ^
+SyntaxError: unexpected EOF while parsing
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
+Python espera que le demos más instrucciones que se supone serán ejecutadas si la condición `3 > 2` resulta ser verdadera (o `True` en este caso). Intentemos hacer que Python imprima `It works!`. Cambia tu código en el archivo `intro.py` para que se vea como esto:
 
 ```python
 if 3 > 2:
@@ -535,10 +666,32 @@ if 3 > 2:
 
 Guárdalo y ejecútalo de nuevo:
 
-```python
-    $ python3 python_intro.py
-    It works!
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+It works!
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+It works!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+It works!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ¿Qué pasa si la condición no es verdadera?, en ejemplos anteriores, el código fue ejecutado sólo cuando las condiciones eran ciertas. Pero Python también tiene declaraciones `elif` y `else`:
 
@@ -551,10 +704,32 @@ else:
 
 Al ejecutar esto se imprimirá:
 
-```python
-    $ python3 python_intro.py
-    5 is indeed greater than 2
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+5 is indeed greater than 2
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+5 is indeed greater than 2
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+5 is indeed greater than 2
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Si 2 fuera un número mayor que 5, entonces el segundo comando sería ejecutado. Fácil, vamos a ver cómo funciona `elif`:
 
@@ -571,10 +746,32 @@ else:
 
 y al ejecutarlo:
 
-```python
-    $ python3 python_intro.py
-    Hey Goku!
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hey Goku!
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hey Goku!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hey Goku!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ¿Ves lo que pasó ahí?
 
@@ -593,7 +790,7 @@ En los últimos tres ejercicios aprendiste acerca de:
 
 ¿Recuerdas las funciones como `len()` que puedes ejecutar en Python? Bien, buenas noticias, ahora aprenderás cómo escribir tus propias funciones.
 
-Una función es una secuencia de instrucciones que Python debe ejecutar. Cada función en Python comienza con la palabra clave `def`, se le asigna un nombre y puede tener algunos parámetros. Vamos a empezar con algo fácil. Reemplaza el código en `python_intro.py` con lo siguiente:
+Una función es una secuencia de instrucciones que Python debe ejecutar. Cada función en Python comienza con la palabra clave `def`, se le asigna un nombre y puede tener algunos parámetros. Vamos a empezar con algo fácil. Reemplaza el código en `intro.py` con lo siguiente:
 
 ```python
 def hi():
@@ -607,11 +804,35 @@ Bien, nuestra primera función está lista. Te preguntarás por qué hemos escri
 
 Ejecutemos esto y veamos qué sucede:
 
-```python
-    $ python3 python_intro.py
-    Hi there!
-    How are you?
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hi there!
+How are you?
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hi there!
+How are you?
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hi there!
+How are you?
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Eso fue fácil, vamos a construir nuestra primera función con parámetros. Utilizaremos el ejemplo anterior - una función que dice `Hi` a la persona que ejecuta el programa - con un nombre `def hi(name)`. Como puedes ver, ahora dimos a nuestra función un parámetro que llamamos `name`:
 
@@ -629,32 +850,104 @@ hi()
 
 Como puedes notar, tuvimos que poner dos indentaciones antes de la función `print` porque `if` necesita saber lo que debería ocurrir cuando se cumple la condición. Vamos a ver cómo funciona:
 
-```python
-    $ python3 python_intro.py
-    Traceback (most recent call last):
-    File "python_intro.py", line 10, in <module>
-      hi()
-    TypeError: hi() missing 1 required positional argument: 'name'
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Traceback (most recent call last):
+File "intro.py", line 10, in <module>
+    hi()
+TypeError: hi() missing 1 required positional argument: 'name'
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Traceback (most recent call last):
+File "intro.py", line 10, in <module>
+    hi()
+TypeError: hi() missing 1 required positional argument: 'name'
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Traceback (most recent call last):
+File "intro.py", line 10, in <module>
+    hi()
+TypeError: hi() missing 1 required positional argument: 'name'
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Oops, un error. Por suerte, Python nos da un mensaje de error bastante útil. Nos dice que la función `hi()` (la que definimos) tiene un argumento requerido (llamado name) y que se nos olvidó pasarlo al llamar a la función. Vamos a arreglarlo en la parte inferior del archivo `hi("Carlos")`. Y lo ejecutamos otra vez:
 
-```python
-    $ python3 python_intro.py
-    Hi Carlos!
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hi Carlos!
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hi Carlos!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hi Carlos!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ¿Y si cambiamos el nombre?, `hi("Goku")`. Y lo corremos:
 
-```python
-    $ python3 python_intro.py
-    Hi Goku!
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hi Goku!
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hi Goku!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hi Goku!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Ahora, ¿Qué crees que pasará si escribes otro nombre allí? (No Carlos o Goku). Pruébalo y verás si tienes razón. Esto debería imprimir:
 
 ```bash
-    Hi anonymous!
+Hi anonymous!
 ```
 
 Esto es increíble, ¿verdad?. De esta forma no tienes que repetir todo cada vez que deseas cambiar el nombre de la persona a la que la función debería saludar. Y eso es exactamente el por qué necesitamos funciones - ¡para no repetir tu código!.
@@ -675,10 +968,32 @@ hi()
 
 Debería de ejecutarse así:
 
-```bash
-    $ python3 python_intro.py
-    Hi anonymous!
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hi anonymous!
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hi anonymous!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hi anonymous!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Vamos a hacer algo más inteligente - hay más de dos nombres, y escribir una condición para cada uno sería difícil, ¿no?. Así que optimizamos:
 
@@ -694,10 +1009,32 @@ hi("Dany")
 
 Ahora vamos a llamar al código:
 
-```bash
-    $ python3 python_intro.py
-    Hi Rachel!
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hi Rachel!
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hi Rachel!
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hi Rachel!
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 ¡Felicidades! Acabas de aprender cómo escribir funciones.
 
@@ -735,23 +1072,71 @@ for name in metallica:
 
 y cuando lo ejecutamos:
 
-```bash
-    $ python3 python_intro.py
-    Hi James!
-    Next member
-    Hi Lars!
-    Next member
-    Hi Robert!
-    Next member
-    Hi Cliff!
-    Next member
-    Hi Jason!
-    Next member
-    Hi Dave!
-    Next member
-    Hi Ron!
-    Next member
+{{< tabs >}}
+{{< tab "Git Bash" >}}
+
+```sh
+$ python intro.py
+Hi James!
+Next member
+Hi Lars!
+Next member
+Hi Robert!
+Next member
+Hi Cliff!
+Next member
+Hi Jason!
+Next member
+Hi Dave!
+Next member
+Hi Ron!
+Next member
 ```
+
+{{< /tab >}}
+{{< tab "Windows" >}}
+
+```sh
+> python intro.py
+Hi James!
+Next member
+Hi Lars!
+Next member
+Hi Robert!
+Next member
+Hi Cliff!
+Next member
+Hi Jason!
+Next member
+Hi Dave!
+Next member
+Hi Ron!
+Next member
+```
+
+{{< /tab >}}
+{{< tab "Linux" >}}
+
+```sh
+$ python intro.py
+Hi James!
+Next member
+Hi Lars!
+Next member
+Hi Robert!
+Next member
+Hi Cliff!
+Next member
+Hi Jason!
+Next member
+Hi Dave!
+Next member
+Hi Ron!
+Next member
+```
+
+{{< /tab >}}
+{{< /tabs >}}
 
 Como puedes ver, todo lo que pones con una indentación dentro de una sentencia `for` será repetido para cada elemento de la lista `metallica`.
 
