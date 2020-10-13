@@ -3,11 +3,11 @@ Practica 4 - Desarrollo de aplicaciones web
 
 Resumen
 --------
-Este software consite en una emulaciond el jeugo del ahorcado. Al iniciar
-el script y una palabra es elegiada al azar, la cual deberá ser adivinada.
+Este software consiste en una emulación del juego del ahorcado. Al iniciar
+el script y una palabra es elegida al azar, la cual deberá ser adivinada.
 El usuario tiene 6 oportunidades (cabeza, brazos, torso y piernas), las
 letras repetidas no cuentan como oportunidad perdida ya sea que sean correctas
-o incorrectas, al completar la palbra el usuario gana el juego de lo contrario
+o incorrectas, al completar la palabra el usuario gana el juego de lo contrario
 terminá ahorcado.
 
 Dependencias
@@ -104,7 +104,7 @@ HANGMAN_ART = (
 
 def pick_random_word():
     """
-    Esta funcion elige una palabra al azar del diccionario
+    Esta función elige una palabra al azar del diccionario
     """
     # abre el diccionario
     with open("lemario.txt", 'r', encoding="utf8") as file:
@@ -115,23 +115,24 @@ def pick_random_word():
     index = random.randint(0, len(words) - 1)
 
     # toma la palabra que se encuentra en ese indice,
-    # remueve el retorno de carro (strip) y convierte a mayusculas (upper)
+    # remueve el retorno de carro (strip) y convierte a mayúsculas (upper)
     word = words[index].strip().upper()
     return word
 
 
 def ask_user_for_next_letter():
     """
-    Esta funcion le pide al usuario la siguiente
+    Esta función le pide al usuario la siguiente
     letra
     """
     letter = input("Adivina la siguiente letra: ")
+    # TODO .. validate that the user enters only one letter
     return letter.strip().upper()
 
 
 def generate_word_string(word, letters_guessed):
     """
-    Funcion que genera el diagrama de letras adivinadas y ocultas
+    Función que genera el diagrama de letras adivinadas y ocultas
     """
     output = []
     for letter in word:
@@ -142,17 +143,15 @@ def generate_word_string(word, letters_guessed):
     return " ".join(output)
 
 def clean_screen():
-    #stdscr = curses.initscr()  # initialise it
-    #stdscr.clear()  # Clear the screen
+    # Limpiar pantalla (se usa el modulo click para soportar multiplataforma)
     click.clear()
-    #print("\033[H\033[J")
 
 def main():
     """
     Función principal de la aplicación
     """
     clean_screen()
-    
+
     word = pick_random_word()
     letters_to_guess = set(word)
     correct_letters_guessed = set()
@@ -192,7 +191,7 @@ def main():
             # si se adivino incorrectamente
             incorrect_letters_guessed.add(guess)
 
-    # Decirle al usuario si gano o perdio
+    # Decirle al usuario si gano o perdió
     if len(letters_to_guess) == 0:
         print("Felicitaciones! Adivinaste correctamente {}".format(word))
     else:
