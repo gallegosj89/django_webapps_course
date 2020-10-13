@@ -38,7 +38,7 @@ La opción `related_name` en `models.ForeignKey` nos permite tener acceso a los 
 Es tiempo de agregar nuestro modelo de comentarios a la base de datos. Para hacer esto le vamos a decir a Django que haga los cambios a nuestro modelo. Escribe `python manage.py makemigrations blog` en tu línea de comandos. Deberías ver algo como esto:
 
 ```bash
-(myvenv) ~/django-daw$ python manage.py makemigrations blog
+(env) ~/django-daw$ python manage.py makemigrations blog
 Migrations for 'blog':
   0002_comment.py:
     - Create model Comment
@@ -47,7 +47,7 @@ Migrations for 'blog':
 Como puedes ver, se ha creado otro archivo de migración en la carpeta `blog/migrations/`. Ahora necesitamos aplicar estos cambios escribiendo `python manage.py migrate blog` en la línea de comandos. La salida debería verse así:
 
 ```bash
-(myvenv) ~/django-daw$ python manage.py migrate blog
+(env) ~/django-daw$ python manage.py migrate blog
 Operations to perform:
   Apply all migrations: blog
 Running migrations:

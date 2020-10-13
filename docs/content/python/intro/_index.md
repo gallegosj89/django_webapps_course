@@ -501,7 +501,7 @@ Para salir del intérprete de Python que hemos estado usando, simplemente escrib
 
 Esto te llevará de vuelta a la línea de comandos.
 
-Anteriormente, instalamos un editor de código _Visual Studio Code_. Ahora vamos a abrir el editor y al mismo tiempo crear un archivo en nuestro directorio base (`~`):
+Anteriormente, instalamos un editor de código _Visual Studio Code_. Ahora vamos a abrir el editor y al mismo tiempo crear un archivo en nuestro directorio base (`~` o `%userprofile%`):
 
 {{< tabs >}}
 {{< tab "Git Bash" >}}
@@ -514,7 +514,7 @@ code ~/intro.py
 {{< tab "Windows" >}}
 
 ```sh
-code ~/intro.py
+code %userprofile%\intro.py
 ```
 
 {{< /tab >}}
@@ -554,7 +554,7 @@ cd ~/
 {{< tab "Windows" >}}
 
 ```sh
-cd ~/
+cd %userprofile%\
 ```
 
 {{< /tab >}}

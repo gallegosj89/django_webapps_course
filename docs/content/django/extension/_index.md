@@ -279,7 +279,7 @@ git pull [...]
 
 Servidores como PythonAnywhere prefieren tratar los archivos estáticos (como los archivos CSS) de manera diferente a los archivos de Python, ya que puede crear optimizaciones para cargarlos mas rápido. Como resultado, cada vez que hacemos cambios a nuestros archivos CSS, tenemos que ejecutar comandos extra en el servidor para actualizarlos. el comando es llamado `collectstatic`.
 
-Comienza activando tu virtualenv si no esta activo todavía de antes (PythonAnywhere utiliza un comando llamado `workon` para hacer esto, es lo mismo que el comando `source myvenv/bin/activate` que usas en la máquina virtual):
+Comienza activando tu virtualenv si no esta activo todavía de antes (PythonAnywhere utiliza un comando llamado `workon` para hacer esto, es lo mismo que el comando `source env/bin/activate` que usas en la máquina virtual):
 
 ```bash
 workon <tu-pythonanywhere-username>.pythonanywhere.com

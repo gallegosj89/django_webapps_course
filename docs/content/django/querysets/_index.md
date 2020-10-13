@@ -14,7 +14,7 @@ Un QuerySet es, en esencia, una lista de objetos de un modelo determinado. Un Qu
 Abre la consola local y escribe este comando:
 
 ```bash
-(myvenv) ~/django-carlos$ python manage.py shell
+(env) ~/django-carlos$ python manage.py shell
 ```
 
 El resultado debería ser:

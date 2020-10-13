@@ -46,7 +46,7 @@ Git llevará un registro de los cambios realizados en todos los ficheros y carpe
     *.pyc
     *~
     __pycache__
-    myvenv
+    env
     db.sqlite3
     /static
     .DS_Store

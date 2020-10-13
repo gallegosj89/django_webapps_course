@@ -15,7 +15,7 @@ Cada página en Internet necesita su propia URL. De esta manera tu aplicación s
 
 ## Funcionamiento
 
-Vamos a abrir el archivo `mysite/urls.py` en tu editor de texto de preferencia (vim, nano, sublime) y ver cómo es:
+Vamos a abrir el archivo `mysite/urls.py` en tu editor de texto de preferencia (code, vim, nano, sublime) y ver cómo es:
 
 ```python
    """mysite URL Configuration

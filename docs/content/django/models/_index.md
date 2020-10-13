@@ -62,7 +62,7 @@ Piensa en el modelo en la base de datos como una hoja de cálculo con columnas (
 Para mantener todo en orden, crearemos una aplicación separada dentro de nuestro proyecto. Es muy bueno tener todo organizado desde el principio. Para crear una aplicación, necesitamos ejecutar el siguiente comando en la consola (dentro de la carpeta `django-daw` donde está el archivo `manage.py`):
 
 ```bash
-(myvenv) ~/django-daw$ python manage.py startapp blog
+(env) ~/django-daw$ python manage.py startapp blog
 ```
 
 Vas a notar que se crea un nuevo directorio llamado `blog` y contiene una serie de archivos. Nuestros directorios y archivos en nuestro proyecto deberían verse así `tree . -L 2`:
@@ -158,7 +158,7 @@ Si algo todavía no está claro sobre modelos, ¡no dudes en preguntar!. Puede s
 El último paso es añadir nuestro nuevo modelo a nuestra base de datos. Primero tenemos que hacer que Django sepa que tenemos algunos cambios en nuestro modelo (acabamos de crearlo), escribe `python manage.py makemigrations blog`. Se verá así:
 
 ```bash
-(myvenv) ~/django-daw$ python manage.py makemigrations blog
+(env) ~/django-daw$ python manage.py makemigrations blog
 Migrations for 'blog':
     0001_initial.py:
     - Create model Post
@@ -169,7 +169,7 @@ Migrations for 'blog':
 Django preparará un archivo de migración que tenemos que aplicar ahora a nuestra base de datos escribiendo `python manage.py migrate blog`. El resultado debe ser:
 
 ```bash
-(myvenv) ~/django-daw$ python manage.py migrate blog
+(env) ~/django-daw$ python manage.py migrate blog
 Operations to perform:
     Apply all migrations: blog
 Running migrations:
@@ -204,7 +204,7 @@ Para poder ingresar deberás crear un _super-usuario_ - un usuario que tiene con
 Cuando sea necesario, teclea tu nombre de usuario (en minúsculas, sin espacios), dirección de e-mail y contraseña cuando sean requeridos. No te preocupes que no puedes ver tu contraseña mientras la tecleas - así es como debe ser. Simplemente escríbela y presiona **Enter** para continuar. La salida de este comando debería verse así (nombre de usuario y email deberían ser los tuyos):
 
 ```bash
-    (myvenv) ~/djangogirls$ python manage.py createsuperuser
+    (env) ~/djangogirls$ python manage.py createsuperuser
     Username: admin
     Email address: admin@admin.com
     Password:
