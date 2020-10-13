@@ -1,7 +1,7 @@
 ---
-title: Setup (deprecated)
+title: Máquina virtual (deprecated)
 description: Deprecated
-weight: 1
+weight: 99
 subpage: false
 hidden: true
 ---
