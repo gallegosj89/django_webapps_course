@@ -14,7 +14,7 @@ Para empezar a jugar con Python, tenemos que abrir una línea de comandos en nue
 Una vez abierta, sigue las siguientes instrucciones. Queremos abrir una consola de Python, así que escribe `python` y pulsa **Enter**.
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```python
 $ python
@@ -24,20 +24,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
 ```python
 > python
-Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```python
-$ python
 Python 3.9.0 (tags/v3.9.0:9cf6752, Oct  5 2020, 15:34:40) [MSC v.1927 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
@@ -504,24 +494,17 @@ Esto te llevará de vuelta a la línea de comandos.
 Anteriormente, instalamos un editor de código _Visual Studio Code_. Ahora vamos a abrir el editor y al mismo tiempo crear un archivo en nuestro directorio base (`~` o `%userprofile%`):
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 code ~/intro.py
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 code %userprofile%\intro.py
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-code ~/intro.py
 ```
 
 {{< /tab >}}
@@ -544,24 +527,17 @@ Con el archivo guardado, es hora de ejecutarlo. Utilizando las habilidades que h
 El comando se verá algo como esto:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 cd ~/
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 cd %userprofile%\
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-cd ~/
 ```
 
 {{< /tab >}}
@@ -570,7 +546,7 @@ cd ~/
 Si te quedas atascado, sólo pide ayuda (pero recuerda que lo vimos en la sección de la [línea de comandos]({{< ref "../../getting-started/terminal/" >}}). Y luego usa Python para ejecutar el código en el archivo como sigue:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -578,18 +554,10 @@ Hello world, in Python!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hello world, in Python!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hello world, in Python!
 ```
 
@@ -623,7 +591,7 @@ if 3 > 2:
 Si lo guardáramos y lo ejecutáramos, veríamos un error como este:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -633,20 +601,10 @@ SyntaxError: unexpected EOF while parsing
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-File "intro.py", line 2
-         ^
-SyntaxError: unexpected EOF while parsing
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 File "intro.py", line 2
          ^
 SyntaxError: unexpected EOF while parsing
@@ -667,7 +625,7 @@ if 3 > 2:
 Guárdalo y ejecútalo de nuevo:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash">}}
 
 ```sh
 $ python intro.py
@@ -675,18 +633,10 @@ It works!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-It works!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 It works!
 ```
 
@@ -705,7 +655,7 @@ else:
 Al ejecutar esto se imprimirá:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash">}}
 
 ```sh
 $ python intro.py
@@ -713,18 +663,10 @@ $ python intro.py
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-5 is indeed greater than 2
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 5 is indeed greater than 2
 ```
 
@@ -747,7 +689,7 @@ else:
 y al ejecutarlo:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -755,18 +697,10 @@ Hey Goku!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hey Goku!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hey Goku!
 ```
 
@@ -805,7 +739,7 @@ Bien, nuestra primera función está lista. Te preguntarás por qué hemos escri
 Ejecutemos esto y veamos qué sucede:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -814,19 +748,10 @@ How are you?
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hi there!
-How are you?
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hi there!
 How are you?
 ```
@@ -851,7 +776,7 @@ hi()
 Como puedes notar, tuvimos que poner dos indentaciones antes de la función `print` porque `if` necesita saber lo que debería ocurrir cuando se cumple la condición. Vamos a ver cómo funciona:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -862,21 +787,10 @@ TypeError: hi() missing 1 required positional argument: 'name'
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Traceback (most recent call last):
-File "intro.py", line 10, in <module>
-    hi()
-TypeError: hi() missing 1 required positional argument: 'name'
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Traceback (most recent call last):
 File "intro.py", line 10, in <module>
     hi()
@@ -889,7 +803,7 @@ TypeError: hi() missing 1 required positional argument: 'name'
 Oops, un error. Por suerte, Python nos da un mensaje de error bastante útil. Nos dice que la función `hi()` (la que definimos) tiene un argumento requerido (llamado name) y que se nos olvidó pasarlo al llamar a la función. Vamos a arreglarlo en la parte inferior del archivo `hi("Carlos")`. Y lo ejecutamos otra vez:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -897,18 +811,10 @@ Hi Carlos!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hi Carlos!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hi Carlos!
 ```
 
@@ -918,7 +824,7 @@ Hi Carlos!
 ¿Y si cambiamos el nombre?, `hi("Goku")`. Y lo corremos:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -926,18 +832,10 @@ Hi Goku!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hi Goku!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hi Goku!
 ```
 
@@ -969,7 +867,7 @@ hi()
 Debería de ejecutarse así:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -977,18 +875,10 @@ Hi anonymous!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hi anonymous!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hi anonymous!
 ```
 
@@ -1010,7 +900,7 @@ hi("Dany")
 Ahora vamos a llamar al código:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -1018,18 +908,10 @@ Hi Rachel!
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hi Rachel!
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hi Rachel!
 ```
 
@@ -1073,7 +955,7 @@ for name in metallica:
 y cuando lo ejecutamos:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ python intro.py
@@ -1094,31 +976,10 @@ Next member
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > python intro.py
-Hi James!
-Next member
-Hi Lars!
-Next member
-Hi Robert!
-Next member
-Hi Cliff!
-Next member
-Hi Jason!
-Next member
-Hi Dave!
-Next member
-Hi Ron!
-Next member
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ python intro.py
 Hi James!
 Next member
 Hi Lars!

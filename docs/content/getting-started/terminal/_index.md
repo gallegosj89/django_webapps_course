@@ -29,27 +29,20 @@ Si estas utilizando Linux está probablemente en `Aplicaciones → Accesorios �
 
 ### Prompt
 
-Ahora deberías ver una ventana blanca o negra que está esperando tus órdenes. Depende el sistema operativo ya sea Windows o Linux (aplica también para Mac OS X, a menos que se indique lo contrario), puedes ver diferentes textos.
+Ahora deberías ver una ventana blanca o negra que está esperando tus órdenes. Depende el sistema operativo ya sea `cmd` en Windows o `bash` (que incluye a _Git Bash_, _Linux_, y _Mac OS X_, a menos que se indique lo contrario), puedes ver diferentes textos.
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 >
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$
 ```
 
 {{< /tab >}}
@@ -69,7 +62,7 @@ En futuras prácticas, cuando se requiera que escribas algún comando, si se inc
 
 ### Primer comando
 
-En este tutorial, para homologar casos de usos, estaremos utilizando _Git Bash_ que viene por defecto con _Git_ (denotado como `Bash` cuando se vayan a ejecutar comandos). Ya que está consola se ejecuta y ve igual en todos los sistemas operativos; nos facilita hablar a todos el mismo idioma.
+En este tutorial, para homologar casos de usos, estaremos utilizando _Git Bash_ que viene por defecto con _Git_ (denotado como `bash` cuando se vayan a ejecutar comandos). Ya que está consola se ejecuta y ve igual en todos los sistemas operativos; nos facilita hablar a todos el mismo idioma.
 
 {{%notice primary%}}
 Si algo no funciona en _Git Bash_ utiliza la consola por defecto de tu sistema operativo.
@@ -78,23 +71,16 @@ Si algo no funciona en _Git Bash_ utiliza la consola por defecto de tu sistema o
 Vamos a empezar con algo simple. Escribe este comando:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 whoami
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
-whoami
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
+```bat
 whoami
 ```
 
@@ -104,24 +90,17 @@ whoami
 Y luego oprime la tecla Enter. Este es el resultado:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 carlos
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 ubx-carlos\carlos
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-carlos
 ```
 
 {{< /tab >}}
@@ -146,24 +125,17 @@ Cada sistema operativo tiene un conjunto ligeramente diferente de comandos para 
 Sería bueno saber dónde nos encontramos en este momento dentro de la estructura de directorios. Escribe este comando y oprime `Enter`:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 pwd
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 cd
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-pwd
 ```
 
 {{< /tab >}}
@@ -176,24 +148,17 @@ pwd
 El resultado
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 /c/Users/carlos
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 C:\Users\carlos
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-/home/carlos
 ```
 
 {{< /tab >}}
@@ -216,7 +181,7 @@ En Git Bash no hay un comando genérico para ver la ayuda de los comandos, pero 
 Siempre es bueno poder listar los archivos que hay en el directorio actual. Para hacer esto podemos usar el siguiente comando.
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ ls
@@ -228,9 +193,9 @@ Music
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > dir
 Volume in drive C is Windows
  Volume Serial Number is D611-43D1
@@ -243,13 +208,6 @@ Volume in drive C is Windows
 ```
 
 {{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ ls
-```
-
-{{< /tab >}}
 {{< /tabs >}}
 
 ### Cambiar de directorio
@@ -257,23 +215,16 @@ $ ls
 Vamos ahora a nuestro directorio de Escritorio (Desktop).
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 cd Desktop
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
-cd Desktop
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
+```bat
 cd Desktop
 ```
 
@@ -287,7 +238,7 @@ cd Desktop
 Comprueba si realmente ha cambiado. En Linux y OS X:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ pwd
@@ -295,19 +246,11 @@ $ pwd
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > cd
 C:\Users\carlos\Desktop
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ pwd
-/home/carlos/Desktop
 ```
 
 {{< /tab >}}
@@ -324,23 +267,16 @@ Si escribes `cd D` y luego oprimes **TAB** en el teclado, la línea de comandos 
 ¿Qué tal si creamos un directorio para practicar en tu escritorio? Puedes hacerlo de esta manera:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 mkdir practica
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
-mkdir practica
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
+```bat
 mkdir practica
 ```
 
@@ -360,7 +296,7 @@ Si no quieres escribir una y otra vez los mismos comandos, prueba oprimiendo la 
 Un pequeño reto para ti: en el directorio recién creado `practica` crea un directorio llamado `test`. Utiliza los comandos `cd` y `mkdir`.
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ cd practica
@@ -370,23 +306,13 @@ test
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > cd practica
 > mkdir test
 > dir
 05/08/2019 07:28 PM <DIR>      test
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ cd practica
-$ mkdir test
-$ ls
-test
 ```
 
 {{< /tab >}}
@@ -397,24 +323,17 @@ test
 No queremos dejar un desorden, así que vamos a eliminar todo lo que hicimos hasta este momento. En primer lugar, tenemos que volver al directorio _Desktop_:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ cd ..
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > cd ..
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ cd ..
 ```
 
 {{< /tab >}}
@@ -423,7 +342,7 @@ $ cd ..
 Usando `..` en el comando `cd` cambiará el directorio actual al directorio padre (que es el directorio que contiene el directorio actual).
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ pwd
@@ -431,19 +350,11 @@ $ pwd
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > cd
 C:\Users\carlos\Desktop
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-$ pwd
-/home/carlos/Desktop
 ```
 
 {{< /tab >}}
@@ -458,25 +369,18 @@ Eliminar archivos utilizando `del`, `rmdir` o `rm` hace que no puedan recuperars
 {{%/notice%}}
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 rm -r practica
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 > rmdir /S practica
 practica, Are you sure <Y/N>? Y
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-rm -r practica
 ```
 
 {{< /tab >}}
@@ -484,24 +388,17 @@ rm -r practica
 
 Hecho, asegurémonos que en verdad fue borrado.
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 ls
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
+```bat
 dir
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-ls
 ```
 
 {{< /tab >}}
@@ -512,23 +409,16 @@ ls
 Ahora puedes cerrar la línea de comandos sin problemas. Vamos a hacerlo al estilo hacker:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 exit
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
-```sh
-exit
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
+```bat
 exit
 ```
 

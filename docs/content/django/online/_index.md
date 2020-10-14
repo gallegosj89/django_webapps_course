@@ -3,7 +3,9 @@ title: Puesta en línea
 weight: 3
 ---
 
-> **Nota**: La siguiente práctica puede ser a veces un poco difícil de superar. Se persistente y acábala. El despliegue es una parte importante del proceso en el desarrollo web.
+{{%notice secondary%}}
+La siguiente parte de este tutorial puede ser a veces un poco difícil de superar. Se persistente y acábala, el despliegue es una parte importante del proceso en el desarrollo web.
+{{%/notice%}}
 
 Hasta ahora tu sitio web estaba disponible sólo en tu ordenador, ahora aprenderás cómo desplegarlo. El despliegue es el proceso de publicar tu aplicación en Internet para que la gente pueda acceder a ella.
 
@@ -17,47 +19,46 @@ Usaremos GitHub como paso intermedio para transportar nuestro código desde y ha
 
 Git es un "sistema de control de versiones" usado por muchos programadores - es un sistema que registra los cambios en los archivos a través del tiempo de forma tal que puedas acceder a versiones específicas cuando lo desees. Es muy similar a la opción de "registrar cambios" en Microsoft Word, pero mucho más poderoso.
 
-### Instalar Git
-
-Si no lo tienes ya instalado, git debería estar disponible a través del administrador de paquetes, prueba con:
-
-```bash
-    sudo apt-get install git
-```
-
 ### Iniciar nuestro repositorio Git
 
-Git rastrea los cambios realizados a un grupo determinado de ficheros en lo que llamamos un repositorio de código (o "repo" para abreviar). Iniciemos uno para nuestro proyecto. Abre la consola y ejecuta los siguientes comandos en el directorio de `django-daw`:
+Git rastrea los cambios realizados a un grupo determinado de archivos en lo que llamamos un repositorio de código (o "repo" para abreviar). Iniciemos uno para nuestro proyecto. Abre la consola y ejecuta los siguientes comandos en el directorio de `django-daw`:
 
-> **Nota**: Comprueba el directorio de trabajo actual con el comando `pwd` antes de inicializar el repositorio. Deberías estar en la carpeta `django-daw`.
+{{%notice warning%}}
+Recuerda entrar al directorio de tu proyecto, puedes llegar allí con `cd ~/django-daw` o `cd %userprofile%\django-daw`. Despues inicia el entorno virtual.
+{{%/notice%}}
 
 ```bash
-    $ git init
-    Initialized empty Git repository in ~/django-daw/.git/
-    $ git config --global user.name "Tu nombre"
-    $ git config --global user.email tu@ejemplo.com
+$ git init
+Initialized empty Git repository in ~/django-daw/.git/
+$ git config --global user.name "Tu nombre"
+$ git config --global user.email tu@ejemplo.com
 ```
 
 Inicializar el repositorio git es algo que sólo necesitamos hacer una vez por proyecto (y no tendrás que volver a poner tu usuario y correo electrónico nunca más)
 
-Git llevará un registro de los cambios realizados en todos los ficheros y carpetas en este directorio, pero hay algunos ficheros que queremos que ignore. Esto lo hacemos creando un fichero llamado `.gitignore` en el directorio base. Abre tu editor y crea un nuevo fichero con el siguiente contenido:
+Git llevará un registro de los cambios realizados en todos los archivos y directorios en este proyecto, pero hay algunos archivos que queremos que ignore. Esto lo hacemos creando un archivo llamado `.gitignore` en el directorio base. Abre tu editor y crea un nuevo archivo con el siguiente contenido:
 
 ```bash
-    *.pyc
-    *~
-    __pycache__
-    env
-    db.sqlite3
-    /static
-    .DS_Store
+*.pyc
+*~
+__pycache__
+env
+db.sqlite3
+/static
+.DS_Store
 ```
 
-Y guárdalo como `.gitignore` en la primera carpeta "django-daw".
+Y guárdalo como `.gitignore` en el directorio principal del proyecto (`django-daw`).
 
-> **Nota**: ¡El punto al principio del nombre del fichero es importante! Si tienes dificultades para crearlo, usa la opción "Guardar como" en tu editor, eso no falla.
-> **Nota**: Uno de los archivos especificados en `.gitignore` es `db.sqlite3`. Este archivo es tu base de datos local, donde todos los posts son almacenados. No queremos agregar esta base de datos al repositorio porque nuestro sitio de PythonAnywhere va a usar una base de datos diferente. El manejador de base de datos podría ser SQLite, como en tu maquina local, pero usualmente se utiliza MySQL que puede lidiar con muchos mas visitantes al sitio. De cualquier manera, ignorando tu copia de base de datos para la copia del proyecto en GitHub, significa que todos tus post creados hasta el momento se quedaran y solo estarán accesibles de manera local, pero tendrás que agregarlos de nuevo en producción. Debes de pensar en tu base de datos local como un campo de juego donde puedes probar cosas diferentes y no tener miedo de borrar tus posts reales en el blog remoto.
+{{%notice warning%}}
+¡El punto al principio del nombre del archivo es importante! Si tienes dificultades para crearlo, usa la opción "Guardar como" en tu editor, eso no falla.
+{{%/notice%}}
 
-Es buena idea utilizar el comando `git status` antes de `git add` o cuando no estés seguro de lo que va a hacer, para evitar cualquier sorpresa (por ejemplo, añadir o hacer commit de ficheros no deseados). El comando `git status` devuelve información sobre los ficheros sin seguimiento (untracked), modificados, preparados (staged), el estado de la rama y mucho más. La salida debería ser similar a:
+{{%notice info%}}
+**Nota:** Uno de los archivos especificados en `.gitignore` es `db.sqlite3`. Este archivo es tu base de datos local, donde todos los posts son almacenados. No queremos agregar esta base de datos al repositorio porque nuestro sitio de PythonAnywhere va a usar una base de datos diferente. El manejador de base de datos podría ser SQLite, como en tu maquina local, pero usualmente se utiliza MySQL que puede lidiar con muchos mas visitantes al sitio. De cualquier manera, ignorando tu copia de base de datos para la copia del proyecto en GitHub, significa que todos tus post creados hasta el momento se quedaran y solo estarán accesibles de manera local, pero tendrás que agregarlos de nuevo en producción. Debes de pensar en tu base de datos local como un campo de juego donde puedes probar cosas diferentes y no tener miedo de borrar tus posts reales en el blog remoto.
+{{%/notice%}}
+
+Es buena idea utilizar el comando `git status` antes de `git add` o cuando no estés seguro de lo que va a hacer, para evitar cualquier sorpresa (por ejemplo, añadir o hacer commit de archivos no deseados). El comando `git status` devuelve información sobre los archivos sin seguimiento (untracked), modificados, preparados (staged), el estado de la rama y mucho más. La salida debería ser similar a:
 
 ```bash
     $ git status
@@ -90,7 +91,7 @@ Y finalmente guardamos nuestros cambios. Ve a la consola y ejecuta estos comando
 
 ### Enviar nuestro código a GitHub
 
-Visita [GitHub.com](https://www.github.com) y registra una nueva cuenta de usuario gratuita. Luego, crea un nuevo repositorio con el nombre "my-first-blog". Deja desmarcada la opción "Initialise with a README", deja la opción .gitignore en blanco (lo hemos hecho a mano) y deja la licencia como "None".
+Visita [GitHub.com](https://www.github.com) y registra una nueva cuenta de usuario gratuita. Luego, crea un nuevo repositorio con el nombre "my-first-blog". Deja desmarcada la opción "Initialize with a README", deja la opción .gitignore en blanco (lo hemos hecho a mano) y deja la licencia como "None".
 
 ![0801-new_github_repo](0801-new_github_repo.png)
 

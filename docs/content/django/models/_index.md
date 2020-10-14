@@ -59,13 +59,17 @@ Piensa en el modelo en la base de datos como una hoja de cálculo con columnas (
 
 ## Creando una aplicación
 
-Para mantener todo en orden, crearemos una aplicación separada dentro de nuestro proyecto. Es muy bueno tener todo organizado desde el principio. Para crear una aplicación, necesitamos ejecutar el siguiente comando en la consola (dentro de la carpeta `django-daw` donde está el archivo `manage.py`):
+Para mantener todo en orden, crearemos una aplicación separada dentro de nuestro proyecto. Es muy bueno tener todo organizado desde el principio. Para crear una aplicación, necesitamos ejecutar el siguiente comando en la consola.
+
+{{%notice warning%}}
+Recuerda entrar al directorio de tu proyecto, puedes llegar allí con `cd ~/django-daw` o `cd %userprofile%\django-daw`. Despues inicia el entorno virtual.
+{{%/notice%}}
 
 ```bash
-(env) ~/django-daw$ python manage.py startapp blog
+(env) $ python manage.py startapp blog
 ```
 
-Vas a notar que se crea un nuevo directorio llamado `blog` y contiene una serie de archivos. Nuestros directorios y archivos en nuestro proyecto deberían verse así `tree . -L 2`:
+Vas a notar que se crea un nuevo directorio llamado `blog` y contiene una serie de archivos. Nuestros directorios y archivos en nuestro proyecto deberían verse así `tree . -L 2 -I env`:
 
 ```text
 django-daw
@@ -126,7 +130,9 @@ class Post(models.Model):
         return self.title
 ```
 
-> Vuelve a verificar que usaste dos guiones bajos (`_`) en cada lado del `str`. Esta convención se utilizan con frecuencia en Python y a veces también los llamamos "dunder" (diminutivo en inglés de "double-underscore").
+{{%notice info%}}
+Vuelve a verificar que usaste dos guiones bajos (`_`) en cada lado del `str`. Esta convención se utilizan con frecuencia en Python y a veces también los llamamos "dunder" (diminutivo en inglés de "double-underscore").
+{{%/notice%}}
 
 Puede parecer un poco intimidante ese código, pero veamos qué significan estas líneas.
 
@@ -158,18 +164,20 @@ Si algo todavía no está claro sobre modelos, ¡no dudes en preguntar!. Puede s
 El último paso es añadir nuestro nuevo modelo a nuestra base de datos. Primero tenemos que hacer que Django sepa que tenemos algunos cambios en nuestro modelo (acabamos de crearlo), escribe `python manage.py makemigrations blog`. Se verá así:
 
 ```bash
-(env) ~/django-daw$ python manage.py makemigrations blog
+(env) $ python manage.py makemigrations blog
 Migrations for 'blog':
     0001_initial.py:
     - Create model Post
 ```
 
-> Nota: Recuerda guardar los cambio a los archivos que modificaste. De otra manera, la computadora ejecutara la version anterior lo cual podría dar errores inesperados.
+{{%notice info%}}
+Recuerda guardar los cambios de los archivos que modificaste. De otra manera, la computadora ejecutara la version anterior lo cual podría dar errores inesperados.
+{{%/notice%}}
 
 Django preparará un archivo de migración que tenemos que aplicar ahora a nuestra base de datos escribiendo `python manage.py migrate blog`. El resultado debe ser:
 
 ```bash
-(env) ~/django-daw$ python manage.py migrate blog
+(env) $ python manage.py migrate blog
 Operations to perform:
     Apply all migrations: blog
 Running migrations:
@@ -199,17 +207,19 @@ De acuerdo, es hora de ver tu modelo Post. Recuerda ejecutar `python manage.py r
 
 Para poder ingresar deberás crear un _super-usuario_ - un usuario que tiene control sobre todo lo que hay en el sitio. Vuelve hacia atrás a tu línea de comandos (**ctrl+c**) y teclea `python manage.py createsuperuser`, presiona **Enter**.
 
-> Recuerda, para ejecutar nuevos comando mientras el servidor web esta corriendo, abre una nueva terminal y activa tu ambiente virtual.
+{{%notice info%}}
+Recuerda, para ejecutar nuevos comando mientras el servidor web esta corriendo, abre una nueva terminal y activa tu ambiente virtual.
+{{%/notice%}}
 
 Cuando sea necesario, teclea tu nombre de usuario (en minúsculas, sin espacios), dirección de e-mail y contraseña cuando sean requeridos. No te preocupes que no puedes ver tu contraseña mientras la tecleas - así es como debe ser. Simplemente escríbela y presiona **Enter** para continuar. La salida de este comando debería verse así (nombre de usuario y email deberían ser los tuyos):
 
 ```bash
-    (env) ~/djangogirls$ python manage.py createsuperuser
-    Username: admin
-    Email address: admin@admin.com
-    Password:
-    Password (again):
-    Superuser created successfully.
+(env) $ python manage.py createsuperuser
+Username: admin
+Email address: admin@admin.com
+Password:
+Password (again):
+Superuser created successfully.
 ```
 
 Vuelve a tu navegador e ingresa con las credenciales de super usuario que elegiste, ahora deberías poder ver el panel de administración de Django.

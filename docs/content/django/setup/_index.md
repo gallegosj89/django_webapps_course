@@ -12,7 +12,7 @@ Antes de instalar Django, instalaremos una herramienta extremadamente útil que 
 Todo lo que necesitas hacer es encontrar un directorio en el que desees crear el `virtualenv`; tu directorio `home` (el directorio designado a tu usuario), por ejemplo. Para está práctica usaremos un nuevo directorio `django-daw` en tu directorio `home`:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 mkdir ~/django-daw
@@ -20,19 +20,11 @@ cd ~/django-daw
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
 ```bat
 mkdir %userprofile%\django-daw
 cd %userprofile%\django-daw
-```
-
-{{< /tab >}}
-{{< tab "Linux" >}}
-
-```sh
-mkdir ~/django-daw
-cd ~/django-daw
 ```
 
 {{< /tab >}}
@@ -55,7 +47,7 @@ Ahora bien, `env` es el nombre de tu `virtualenv`. Puedes usar cualquier otro no
 Como resultado del comando anterior veras algo así.
 
 {{< tabs >}}
-{{< tab "Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 $ virtualenv env
@@ -67,7 +59,7 @@ created virtual environment CPython3.9.0.final.0-64 in 688ms
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
 ```bat
 > virtualenv env
@@ -86,21 +78,21 @@ created virtual environment CPython3.9.0.final.0-64 in 6055ms
 Este comando anterior creará un directorio llamado `env` que contiene nuestro entorno virtual (básicamente un montón de archivos y carpetas). Todo lo que queremos hacer ahora es iniciarlo ejecutando:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 source env/Scripts/activate
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
 ```bat
 env\Scripts\activate
 ```
 
 {{< /tab >}}
-{{< tab "Linux" >}}
+{{< tab "Linux/Mac" >}}
 
 ```sh
 source env/bin/activate
@@ -112,7 +104,7 @@ source env/bin/activate
 Sabrás que tienes `virtualenv` iniciado cuando veas que aparece un prompt similar a este en la consola:
 
 {{< tabs >}}
-{{< tab "Git Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 (env)
@@ -121,14 +113,14 @@ $
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
 ```bat
 (env) C:\Users\carlos\django-daw>
 ```
 
 {{< /tab >}}
-{{< tab "Linux" >}}
+{{< tab "Linux/Mac" >}}
 
 ```sh
 (env) carlos@ubx-carlos:~/django-daw$
@@ -150,7 +142,7 @@ Cuando trabajes en un entorno virtual, Python automáticamente se referirá a la
 Ahora que tienes tu entorno virtual activo, puedes instalar Django. Para esto solo ejecuta el comando `python -m pip install django` para instalar la version más nueva de Django.
 
 {{< tabs >}}
-{{< tab "Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 (env) $ python -m pip install django
@@ -167,7 +159,7 @@ Successfully installed asgiref-3.2.10 django-3.1.2 pytz-2020.1 sqlparse-0.4.1
 ```
 
 {{< /tab >}}
-{{< tab "Windows" >}}
+{{< tab "cmd" >}}
 
 ```bat
 (env) >python -m pip install django
@@ -219,7 +211,7 @@ El punto `.` es crucial porque indica al script que instale Django en el directo
 El comando `django-admin` creará los archivos y directorios para ti. Ahora deberías tener una estructura de directorios parecida a esto (en _Bash_ usa el comando `tree . -L 4 -I env`):
 
 {{< tabs >}}
-{{< tab "Bash" >}}
+{{< tab "bash" >}}
 
 ```sh
 (env) $ tree . -L 4 -I env
@@ -277,6 +269,12 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```
+
+Debido a que estamos utilizando el modulo `os` para que nos construya un path viable, debemos importar el modulo al inicio del archivo. Así:
+
+```python
+import os
 ```
 
 Cuando `DEBUG` is `True` y `ALLOWED_HOSTS` esta en blanco, las direcciones con las que el sitio web funcionará será cualquiera de esta lista `['localhost', '127.0.0.1', '[::1]']`. Esto no hará juego con nuestro hostname en PythonAnywhere una vez que hagamos el despliegue de nuestra aplicación, así que cambiaremos la configuración a:
