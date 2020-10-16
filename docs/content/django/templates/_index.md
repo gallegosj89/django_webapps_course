@@ -1,5 +1,5 @@
 ---
-title: Querysets
+title: Plantillas
 weight: 5
 ---
 

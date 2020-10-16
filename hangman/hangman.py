@@ -22,7 +22,6 @@ import click
 MAXTRIES = 6
 
 HANGMAN_ART = (
-
     """
        _________
         |/
@@ -33,7 +32,6 @@ HANGMAN_ART = (
         |
         |___
     """,
-
     """
        _________
         |/   |
@@ -44,7 +42,6 @@ HANGMAN_ART = (
         |
         |___
     """,
-
     """
        ________
         |/   |
@@ -55,7 +52,6 @@ HANGMAN_ART = (
         |
         |___
     """,
-
     """
        _________
         |/   |
@@ -66,7 +62,6 @@ HANGMAN_ART = (
         |
         |___
     """,
-
     """
        _________
         |/   |
@@ -77,8 +72,6 @@ HANGMAN_ART = (
         |
         |___
     """,
-
-
     """
        ________
         |/   |
@@ -89,8 +82,6 @@ HANGMAN_ART = (
         |
         |___
     """,
-
-
     """
        ________
         |/   |
@@ -100,14 +91,16 @@ HANGMAN_ART = (
         |   / \\
         |
         |___
-    """)
+    """,
+)
+
 
 def pick_random_word():
     """
     Esta función elige una palabra al azar del diccionario
     """
     # abre el diccionario
-    with open("lemario.txt", 'r', encoding="utf8") as file:
+    with open("lemario.txt", "r", encoding="utf8") as file:
         words = file.readlines()
 
     # genera un indice aleatorio
@@ -142,9 +135,11 @@ def generate_word_string(word, letters_guessed):
             output.append("_")
     return " ".join(output)
 
+
 def clean_screen():
     # Limpiar pantalla (se usa el modulo click para soportar multiplataforma)
     click.clear()
+
 
 def main():
     """
@@ -158,8 +153,7 @@ def main():
     incorrect_letters_guessed = set()
 
     print("Bienvenido al juego del ahorcado!")
-    while len(letters_to_guess) > 0 and \
-    		len(incorrect_letters_guessed) < MAXTRIES:
+    while len(letters_to_guess) > 0 and len(incorrect_letters_guessed) < MAXTRIES:
 
         word_string = generate_word_string(word, correct_letters_guessed)
         print("\n\n\n\n")
@@ -174,8 +168,7 @@ def main():
 
         # Revisar si ya se adivino esa
         # letra
-        if guess in correct_letters_guessed or \
-                guess in incorrect_letters_guessed:
+        if guess in correct_letters_guessed or guess in incorrect_letters_guessed:
             # imprime un mensaje
             print("Ya se adivino esa letra.")
             continue
@@ -187,7 +180,7 @@ def main():
             # actualizar la lista letters de letras adivinadas
             correct_letters_guessed.add(guess)
         else:
-        	# solo actualizar la lista de respuestas incorrectas
+            # solo actualizar la lista de respuestas incorrectas
             # si se adivino incorrectamente
             incorrect_letters_guessed.add(guess)
 
@@ -197,5 +190,6 @@ def main():
     else:
         print("Lo siento, la palabra era {}".format(word))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

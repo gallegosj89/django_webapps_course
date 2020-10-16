@@ -1,5 +1,5 @@
 ---
-title: URLs
+title: Vistas
 weight: 4
 ---
 
