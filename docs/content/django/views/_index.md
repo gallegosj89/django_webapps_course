@@ -1,5 +1,5 @@
 ---
-title: Plantillas
+title: Vistas
 weight: 5
 ---
 
