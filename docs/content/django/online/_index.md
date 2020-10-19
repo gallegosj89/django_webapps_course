@@ -203,6 +203,10 @@ Una vez enlazado nuestro repositorio, solo nos queda "empujar" los cambios local
 git push -u origin master
 ```
 
+Una vez los cambios estén arriba, deberías de poder ver los archivos de tu repositorio en Gitlab.
+
+![gitlab-repo.png](gitlab-repo.png)
+
 {{% /tab %}}
 {{% tab "Github" %}}
 
@@ -260,6 +264,10 @@ Una vez enlazado nuestro repositorio, solo nos queda "empujar" los cambios local
 git push -u origin master
 ```
 
+Una vez los cambios estén arriba, deberías de poder ver los archivos de tu repositorio en Github.
+
+![github-repo.png](github-repo.png)
+
 {{% /tab %}}
 {{< /tabs >}}
 
@@ -269,38 +277,52 @@ Es hora de registrar una cuenta gratuita de tipo "Beginner" en PythonAnywhere.
 
 -   [www.pythonanywhere.com](https://www.pythonanywhere.com/)
 
-> **Nota**: Cuando elijas tu nombre de usuario ten en cuenta que la URL de tu blog tendrá la forma `nombredeusuario.pythonanywhere.com`, así que o bien elije tu propio apodo o bien un nombre que describa sobre qué trata tu blog.
+{{%notice info%}}
+**Nota:** Cuando elijas tu nombre de usuario ten en cuenta que la URL de tu blog tendrá la forma `nombredeusuario.pythonanywhere.com`, así que o bien elije tu propio alias o bien un nombre que describa sobre qué trata tu blog.
+{{%/notice%}}
 
 ### Creando un API token de PythonAnywhere
 
 Esto es algo que solo ocupas realizar una vez. Cuando te hayas registrado en PythonAnywhere, serás tomado a tu página principal (Dashboard). Encuentra el enlace cerca de la esquina derecha de la pagina que te lleva a la pagina de cuenta (Account), luego selecciona la pestaña con el nombre "API token", y presiona el botón que dice "Create new API token".
 
-![0803-pythonanywhere_create_api_token](0803-pythonanywhere_create_api_token.png)
+![pa-api_token.png](pa-api_token.png?height=250px)
 
 ### Configurando nuestro sitio en PythonAnywhere
 
-Regresa a la pagina principal [Dashboard](https://www.pythonanywhere.com/) haciendo click en el logo (la viborita), y elige la opcion de iniciar una nueva consola de "Bash" — esa el version de la línea de comando de PythonAnywhere, justo como la que tienes en tu maquina virtual.
+Regresa a la pagina principal [Dashboard](https://www.pythonanywhere.com/) haciendo click en el logo (la viborita), y elige la opción de iniciar una nueva consola de "Bash" — esa el version de la línea de comando de PythonAnywhere, justo como la que tienes en tu maquina virtual.
 
-![0804-pythonanywhere_bash_console](0804-pythonanywhere_bash_console.png)
+![pa-bash_console.png](pa-bash_console.png?height=250px)
 
 Desplegar una aplicación web en PythonAnywhere significar jalar (pull) el código que tenemos en nuestro repositorio de Github, y entonces configurar PythonAnywhere para reconocerlo e iniciar a servirlo como aplicación web. Hay maneras manuales de como hacerlo, pero PythonAnywhere provee una herramienta de ayuda que lo hará por ti. Vamos a instalarla primero:
 
 ```bash
-    pip3 install --user pythonanywhere
+pip3 install --user pythonanywhere
 ```
 
 Ese comando debería de imprimir algo como `Collecting pythonanywhere`, y eventualmente terminar con una línea diciendo `Successfully installed (...) pythonanywhere- (...)`.
 
-Ahora ejecutamos la herramienta de ayuda para automáticamente configure nuestra aplicación de Github. Escribe lo siguiente en la consola de PythonAnywhere (no olvides usar tu nombre de usuario de Github en lugar de `<tu-usuario-de-github>`)
+Antes de poder hacer `pull` de nuestro código tenemos que generar un par de llaves privada y pública, ademas de registrar la llave pública en nuestro repositorio (ya sea Gitlab o Github) como hicimos antes con la llave de nuestra máquina local. El comando para generar la llave SSH es el siguiente.
+
+```sh
+ssh-keygen -b 4096 -t rsa -C pythonanywhere
+```
+
+Solo da ENTER varias veces y se completará el proceso de creación de llaves. Para poder ver el contenido de la llave pública ejecuta:
+
+```sh
+cat ~/.ssh/id_rsa.pub
+```
+
+Ahora ejecutamos la herramienta de ayuda que automáticamente configura nuestra aplicación web en el servidor de PythonAnywhere. Escribe lo siguiente en la consola de PythonAnywhere (no olvides usar la liga SSH de **tu** repositorio).
 
 ```bash
-    pa_autoconfigure_django.py https://github.com/<tu-usuario-de-github>/mi-primer-blog.git
+pa_autoconfigure_django.py git@gitlab.com:gallegosj89/mi-primer-blog.git --python=3.7 --nuke
 ```
 
 Mientras observas como se ejecuta, podrás ver lo que esta haciendo:
 
--   Descargando el código de Github
--   Creando un virtualenv en PythonAnywhere, justo como el que tienes en tu máquina virtual
+-   Descarga el código de tu repositorio
+-   Crea un entorno virtual en tu servidor de PythonAnywhere, similar al que tienes en tu máquina virtual
 -   Actualizando tu archivo de configuración agregando algunas configuraciones de despliegue
 -   Configurando la base de datos en PythonAnywhere usando el comando `manage.py migrate`
 -   Configurando los archivos estáticos (veremos mas de esto en otra práctica)
@@ -308,43 +330,45 @@ Mientras observas como se ejecuta, podrás ver lo que esta haciendo:
 
 En PythonAnywhere todos esos pasos son automáticos, pero son los mismos pasos que debes seguir con cualquier otro servidor. Lo principal que debes notar ahora es que tu base de datos en PythonAnywhere es completamente diferente de tu maquina local—eso significa que tendrá diferentes posts y cuentas de administrador.
 
-Como resultado, así como lo hicimos en la máquina virtual, necesitamos inicializar un usuario de administrador con `createsuperuser`. PythonAnywhere ha activado tu virtualenv de manera automática, así que todo lo que necesitas hacer en ejecutar:
+Como resultado, así como lo hicimos en la máquina virtual, necesitamos inicializar un usuario de administrador con `createsuperuser`. PythonAnywhere ha activado tu entorno virtual de manera automática, así que todo lo que necesitas hacer en ejecutar:
 
-```bash
-    (<usuario>.pythonanaywhere.com) $ python manage.py createsuperuser
+```sh
+python manage.py createsuperuser
 ```
 
 Escribe los detalles de tu usuario de administración. Es mejor usar los mismos que estabas usando en tu maquina virtual para evitar confusiones, a menos que quieras hacer el password de PythonAnywhere mas seguro.
 
 Ahora, si así lo deseas, puedes dar un vistazo a tu código en PythonAnywhere utilizando `ls`:
 
-```bash
-    (<usuario>.pythonanywhere.com) $ ls
-    blog  db.sqlite3  manage.py  mysite  static
-    (<usuario>.pythonanywhere.com) $ ls blog/
-    __init__.py  __pycache__  admin.py  forms.py  migrations  models.py  static
-    templates  tests.py  urls.py  views.py
+```sh
+(gallegosj89.pythonanywhere.com) gallegosj89.pythonanywhere.com $ ls
+blog  db.sqlite3  manage.py  mysite  static
+(gallegosj89.pythonanywhere.com) gallegosj89.pythonanywhere.com $ ls blog/
+__init__.py  __pycache__  admin.py  forms.py  migrations  models.py  static
+templates  tests.py  urls.py  views.py
 ```
 
-Tambien puedes ir a la pestaña de "Files" y navegar alrededor utilizando el navegador de archivos integrado de PythonAnywhere.
+También puedes ir a la pestaña de "Files" y navegar alrededor utilizando el navegador de archivos integrado de PythonAnywhere.
 
 ### Estas en vivo
 
 Tu sitio debería esta ahora en vivo al publico en Internet. Da click a través de la pestaña "Web" en el dashboard de PythonAnywhere para obtener el enlace a tu página. Puedes compartir este enlace con quien desees.
 
-> **Nota** este es una clase de introducción al desarrollo de las aplicaciones web, y desplegando este sitio se tomaron algunos atajos que no son ideales desde el punto de vista de seguridad. Si y cuando decidas construir sobre este proyecto, o iniciar uno nuevo, deberías de revisar la [lista de despliegue de Django](https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/) para obtener algunos tips sobre seguridad en tu sitio.
+{{%notice info%}}
+**Nota:** esta es una clase de introducción al desarrollo de las aplicaciones web, y desplegando este sitio se tomaron algunos atajos que no son ideales desde el punto de vista de seguridad. Si y cuando decidas construir sobre este proyecto, o iniciar uno nuevo, deberías de revisar la [lista de despliegue de Django](https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/) para obtener algunos tips sobre seguridad en tu sitio.
+{{%/notice%}}
 
-### Tips de debugging
+## Tips de debugging
 
 Si ves algún error durante la ejecución del script `pa_autoconfigure_django.py`, aquí tienes una lista de las causas comunes:
 
 -   Olvidaste crear tu API token en PythonAnywhere
--   Escribiste de manera incorrecta tu URL de Github
--   Si ves un error diciendo _"Could not find your settings.py"_, es probable que no hayas subido todos tus archivos a Github, y/o no hiciste _push_ de manera exitosa. Mira de nuevo a la sección sobre Git arriba en esta práctica
+-   Escribiste de manera incorrecta la URL de tu repositorio
+-   Si ves un error diciendo _"Could not find your settings.py"_, es probable que no hayas subido todos tus archivos al repositorio remoto, y/o no hiciste _push_ de manera exitosa. Mira de nuevo a la sección [sobre enlazar nuestros repositorios](#enlazando-tu-repositorio) arriba en esta práctica
 
 Si ves algún error al intentar visitar tu sitio, el primer lugar donde buscar información es el **error log**. Encontraras un enlace al mismo en la [pestaña Web](https://www.pythonanywhere.com/web_app_setup/) de PythonAnywhere. Revisa si hay algunos mensajes de error; los mas nuevos están hasta abajo.
 
-Tambien hay algunos tips en el [sitio de ayuda de PythonAnywhere](http://help.pythonanywhere.com/pages/DebuggingImportError).
+También hay algunos tips en el [sitio de ayuda de PythonAnywhere](http://help.pythonanywhere.com/pages/DebuggingImportError).
 
 Recuerda cualquier duda preguntar, o enviar un correo.
 
@@ -352,4 +376,4 @@ Recuerda cualquier duda preguntar, o enviar un correo.
 
 La pagina por defecto de tu sitio debería de decir "It worked!", justo como se muestra en tu máquina local. Intenta añadir `/admin/` al final de la URL, y serás redirigido al sitio de administración de Django. Inicia sesión con tu usuario y contraseña, verás que puedes añadir Posts en el servidor.
 
-Ya que hayas creado varios posts, puedes regresar a tu proyecto local (en tu maquina virtual, no Python anywhere). De aquí en adelante debes de trabajar en tu proyecto local y hacer cambios. Este es un flujo de trabajo normal en el desarrollo web — hacer cambios locales, subir esos cambio a Github, y jalar los cambios en el servidor Web. Esto permite trabajar y experimentar sin romper el sitio Web en vivo.
+Ya que hayas creado varios posts, puedes regresar a tu proyecto local. De aquí en adelante debes de trabajar en tu proyecto local y subir los cambios al repositorio remoto. Este es un flujo de trabajo normal en el desarrollo web — hacer cambios locales, subir esos cambio al remoto, y hacer `pull` de estos cambios en el servidor Web. Esto permite trabajar y experimentar sin romper el sitio Web que está en vivo.
