@@ -20,7 +20,7 @@ sudo apt install git python3 python3-pip python3-virtualenv
 ![RP-github](RP-github.PNG)
 
 ```bash
-git clone https://github.com/gallegosj89/my-first-blog.git django-daw
+git clone https://github.com/gallegosj89/mi-primer-blog.git django-daw
 ```
 
 4. Crear un ambiente virtual. Recuerda crear un ambiente virtual utilizando Python 3, dentro de la carpeta de su proyecto.

@@ -16,4 +16,4 @@ Use the "**improve this page**" button on the right side on each page to edit (i
 
 ## Documentation website
 
-This current documentation has been statically generated with Hugo with a simple command : `hugo -t docport` -- source code is [available here at GitLab](https://gitlab.com/gallegosj89/webapps).
+This current documentation has been statically generated with Hugo with a simple command : `hugo -t docport` -- source code is [available here at Gitlab](https://gitlab.com/gallegosj89/webapps).

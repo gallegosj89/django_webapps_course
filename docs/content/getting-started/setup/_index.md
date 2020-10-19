@@ -7,7 +7,7 @@ weight: 1
 
 {{% alert theme="info" %}}La última versión de **Django** es la recomendada, las pruebas son hechas siempre con la última versión.{{%/alert%}}
 
-Las indicaciones siguientes te ayudarán a configurar tu ambiente de desarrollo. Si nunca haz trabajado con Python, te sugiero enormemente que busques un curso o tutorial, aquí tienes es [videotutorial de Python para principiantes](https://www.youtube.com/watch?v=cWs-S6wclg8&list=PLL0TiOXBeDah92BouG1YTuej0eJj6o5Sl) como recomendación.
+Las indicaciones siguientes te ayudarán a configurar tu ambiente de desarrollo. Si nunca haz trabajado con Python, te sugiero enormemente que busques un curso o tutorial, aquí tienes es [videotutorial de Python para principiantes](https://www.youtube.com/watch?v=chPhlsHoEPo&list=PLL0TiOXBeDah92BouG1YTuej0eJj6o5Sl&index=3) como recomendación.
 
 <!--more-->
 
