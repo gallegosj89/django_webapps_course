@@ -3,19 +3,23 @@ title: Vistas
 weight: 5
 ---
 
-En esta práctica aprenderás cómo Django se conecta a la base de datos y almacena los datos en ella.
+En esta sección aprenderás cómo Django se conecta a la base de datos, almacena los datos en ella, y más importante como los recupera.
 
 ## QuerySets
 
-Un QuerySet es, en esencia, una lista de objetos de un modelo determinado. Un QuerySet te permite leer los datos de una base de datos, filtrarlos y ordenarlos.
+Un QuerySet es, en esencia, una lista de objetos de un modelo determinado. Un QuerySet te permite leer los datos de una base de datos, filtrarlos y ordenarlos. Es similar a lo que sería un _query_ en SQL pero en un lenguaje especifico de django.
 
-## Django shell
+### Django shell
 
-Abre la consola local y escribe este comando:
+Abre la consola local y despues de entrar al folder de tu proyecto e iniciar el entorno virtual, ejecuta este comando.
 
 ```bash
-(env) ~/django-carlos$ python manage.py shell
+python manage.py shell
 ```
+
+{{%notice warning%}}
+Recuerda entrar al directorio de tu proyecto, puedes llegar allí con `cd ~/django-daw` o `cd %userprofile%\django-daw`. Despues inicia el entorno virtual `source env/Scripts/activate`.
+{{%/notice%}}
 
 El resultado debería ser:
 
@@ -26,7 +30,7 @@ El resultado debería ser:
 
 Ahora estás en la consola interactiva de Django. Es como la consola de Python, pero con un toque de magia Django. Puedes utilizar todos los comandos Python aquí también, por supuesto.
 
-### Todos los objetos
+### Leer todas las entradas de una tabla
 
 Primero vamos a mostrar todos nuestros posts. Puedes hacerlo con el siguiente comando:
 
@@ -37,7 +41,7 @@ Traceback (most recent call last):
 NameError: name 'Post' is not defined
 ```
 
-Apareció un error! Nos dice que no hay ningún objeto Post. Esto es correcto, hizo falta que primero importáramos la clase.
+Apareció un error! Nos dice que no hay ningún objeto Post. Esto es correcto, hizo falta que primero importáramos la clase. Debido a que el interprete funciona como estar introduciendo linea pr linea de un script de python, debemos importar los módulos que necesitamos.
 
 ```python
 >>> from blog.models import Post
@@ -50,7 +54,7 @@ Esto es simple: importamos la clase `Post` de `blog.models`. Vamos a intentar mo
 <QuerySet [<Post: mi titulo>, <Post: otro titulo de post>]>
 ```
 
-Esta es una lista de los posts creados anteriormente. Hemos creado estos posts usando la interfaz del administrador de Django. Sin embargo, ahora queremos crear nuevos posts usando Python, veamos como se hace.
+Esta es una lista de los posts creados anteriormente. Hemos creado estos posts usando la interfaz del administrador de Django. Sin embargo, ahora queremos crear nuevos posts usando este interprete de Django, veamos como se hace.
 
 ### Crea un objeto
 
@@ -114,7 +118,9 @@ Una parte importante de los QuerySets es la habilidad para filtrarlos. Digamos q
 <QuerySet [<Post: Titulo dle post numero 4>]>
 ```
 
-> Hay dos guiones bajos (`_`) entre `title` y `contains`. Django ORM utiliza esta sintaxis para separar los nombres de los campos ("title") y operaciones o filtros ("contains"). Si sólo utilizas un guión bajo, obtendrás un error como "FieldError: Cannot resolve keyword title_contains".
+{{%notice info%}}
+Hay dos guiones bajos (`_`) entre `title` y `contains`. Django ORM utiliza esta sintaxis para separar los nombres de los campos ("title") y operaciones o filtros ("contains"). Si sólo utilizas un guión bajo, obtendrás un error como "FieldError: Cannot resolve keyword title_contains".
+{{%/notice%}}
 
 También puedes obtener una lista de todos los posts publicados. Lo hacemos filtrando los posts que tienen el campo `published_date` en el pasado:
 
@@ -242,19 +248,21 @@ def post_list(request):
 
 Ahora regresemos a nuestra plantilla y mostremos este QuerySet.
 
-> Si quieres leer un poco más acerca de [QuerySets](https://docs.djangoproject.com/en/2.2/ref/models/querysets/) visitando la documentación de Django.
+{{%notice info%}}
+Si quieres leer un poco más acerca de [QuerySets](https://docs.djangoproject.com/en/3.1/ref/models/querysets/) visitando la documentación de Django.
+{{%/notice%}}
 
-## Plantillas de Django
+### Plantillas de Django
 
 Hora de mostrar algunos datos. Django nos provee las útiles **template tags** para ello.
 
-### Template tags
+#### Template tags
 
 Verás, en HTML no puedes realmente poner código Python, porque los navegadores no lo entienden. Ellos sólo saben HTML. Sabemos que HTML es algo estático, mientras que Python es mucho más dinámico.
 
 **Django template tags** nos permite transferir cosas de Python a HTML, de esta manera puedes construir sitios web dinámicos más rápido.
 
-### Mostrar la plantilla post list
+#### Mostrar la plantilla `post_list`
 
 En la parte anterior dimos a nuestra plantilla una lista de posts en la variable `posts`. Ahora lo mostraremos en HTML.
 
@@ -266,12 +274,12 @@ Para imprimir una variable en una plantilla de Django, utilizamos llaves dobles 
 
 Prueba esto en tu plantilla `blog/templates/blog/post_list.html`. Reemplaza todo desde el segundo `<div>` hasta el tercer`</div>` con `{{ posts }}`, guarda el archivo y actualiza la página para ver los resultados:
 
-![1201-step1](1201-step1.png)
+![querys-raw_post.png](querys-raw_post.png)
 
 Como puedes ver, todo lo que obtenemos es esto:
 
 ```python
-   <QuerySet [<Post: Mi segundo post>, <Post: Mi primer post>]>
+<QuerySet [<Post: Mi segundo post>, <Post: Mi primer post>]>
 ```
 
 Esto significa que Django lo entiende como una lista de objetos. Recuerda de la práctica de **Introducción a Python** que podemos mostrar listas con bucles. En una plantilla de Django, lo haces de esta manera:
@@ -282,7 +290,7 @@ Esto significa que Django lo entiende como una lista de objetos. Recuerda de la 
 
 Prueba esto en tu plantilla.
 
-![1202-step2](1202-step2.png)
+![querys-raw_list.png](querys-raw_list.png)
 
 Funciona. Pero queremos que se muestren cómo los posts estáticos que creamos anteriormente en la práctica de **Introducción a HTML**. Puedes mezclar HTML y template tags. Nuestro body se verá así:
 
@@ -302,11 +310,11 @@ Funciona. Pero queremos que se muestren cómo los posts estáticos que creamos a
 
 Todo lo que pones entre `{% for %}` y `{% endfor %}` se repetirá para cada objeto en la lista. Actualiza tu página:
 
-![1203-step3](1203-step3.png)
+![querys-post_list.png](querys-post_list.png)
 
 ¿Has notado que utilizamos una notación diferente esta vez `{{ post.title }}` ó `{{ post.text }}`? Estamos accediendo a datos en cada uno de los campos definidos en nuestro modelo `Post`. Además, el `|linebreaksbr` está dirigiendo el texto de los posts a través de un filtro para convertir saltos de línea en párrafos.
 
-### Una cosa más
+## Una cosa más
 
 Sería bueno ver si tu sitio web seguirá funcionando en la Internet pública, intentemos desplegándolo en PythonAnywhere nuevamente. Aquí te esta una recapitulación para ayudarte...
 
