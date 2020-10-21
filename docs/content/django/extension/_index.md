@@ -30,11 +30,7 @@ Luego ábrelo y copia todo lo que hay en `post_list.html` al archivo `base.html`
         <title>Django Daw blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-        <link
-            href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
-            rel="stylesheet"
-            type="text/css"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" />
         <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
     </head>
     <body>
