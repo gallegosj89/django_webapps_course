@@ -27,15 +27,16 @@ Luego ábrelo y copia todo lo que hay en `post_list.html` al archivo `base.html`
 {% load static %}
 <html>
     <head>
-        <title>Django Daw blog</title>
+        <title>DAW blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" />
         <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
     </head>
     <body>
         <div class="page-header">
-            <h1><a href="/">Django Daw Blog</a></h1>
+            <h1><a href="/">DAW Blog</a></h1>
         </div>
 
         <div class="content container">
@@ -60,7 +61,7 @@ Luego, en `base.html` reemplaza por completo tu `<body>` (todo lo que haya entre
 ```html
 <body>
     <div class="page-header">
-        <h1><a href="/">Django Daw Blog</a></h1>
+        <h1><a href="/">DAW Blog</a></h1>
     </div>
     <div class="content container">
         <div class="row">

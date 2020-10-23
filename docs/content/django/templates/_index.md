@@ -238,11 +238,11 @@ Aquí hay un ejemplo de una plantilla completa, copia y pega en `blog/templates/
 ```html
 <html>
     <head>
-        <title>Django DAW blog</title>
+        <title>DAW blog</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Django DAW Blog</a></h1>
+            <h1><a href="">DAW Blog</a></h1>
         </div>
 
         <div>

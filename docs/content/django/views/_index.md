@@ -296,7 +296,7 @@ Funciona. Pero queremos que se muestren cómo los posts estáticos que creamos a
 
 ```html
 <div>
-    <h1><a href="/">Django DAW Blog</a></h1>
+    <h1><a href="/">DAW Blog</a></h1>
 </div>
 
 {% for post in posts %}

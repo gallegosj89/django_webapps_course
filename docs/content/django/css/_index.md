@@ -108,14 +108,14 @@ Ahora tu archivo debería tener este aspecto:
 {% load static %}
 <html>
     <head>
-        <title>Django Daw blog</title>
+        <title>DAW blog</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
     </head>
     <body>
         <div>
-            <h1><a href="/">Django Daw Blog</a></h1>
+            <h1><a href="/">DAW Blog</a></h1>
         </div>
 
         {% for post in posts %}
@@ -177,7 +177,7 @@ Nombra algunas partes del código HTML. Añade una clase llamada `page-header` a
 
 ```html
 <div class="page-header">
-    <h1><a href="/">Django Daw Blog</a></h1>
+    <h1><a href="/">DAW Blog</a></h1>
 </div>
 ```
 
@@ -296,3 +296,34 @@ Bien!, se ve mucho mejor. En realidad el código que acabamos de pegar no es tan
 No tengas miedo de jugar un poco con este CSS e intentar cambiar algunas cosas. Si rompes algo, no te preocupes, siempre puedes deshacerlo.
 
 De verdad te recomiendo que hagas algunos cursos gratuitos como por ejemplo ["Basic HTML & HTML5"](https://www.freecodecamp.org/learn/responsive-web-design/basic-html-and-html5/) y ["Basic CSS"](https://www.freecodecamp.org/learn/responsive-web-design/basic-css/) de [freeCodeCamp](https://learn.freecodecamp.org/).
+
+### Un archivo estático más
+
+Por último vamos a añadir uno de los archivos estáticos más comunes de los sitios web, el conocido _favicon_. Seguro que lo conoces, solo que es muy posible que no por su nombre; si alguna vez has abierto una página web y en la pestaña aparece el icono del sitio al accedido, bueno pues ese icono es el _favicon_.
+
+Este pequeñoicono le da mucha personalidad a una web, y hace que se vea un poco más presentable. Si haz seguido las instrucciones la pie de la letra, tu sitio tendrá como color principal el verde institucional - entonces descarga este [archivo de aquí](favicon.ico) y ponlo en el folder que creamos hace un momento `blog/static/` con el nombre `favicon.ico`.
+
+{{%notice tip%}}
+**Tip**
+\
+Si haz seleccionado un esquema de colores personalizado, o solo es que no te gusta el favicon de más arriba, [esta es una web](https://favicon.io/favicon-generator/) muy sencilla donde puedes crear el tuyo un poco más personalizado.
+{{%/notice%}}
+
+Ahora por último vamos a decir a nuestro template que ligue el archivo cuando cree la página HTML. Solo agrega esta línea dentro de la etiqueta `head` de tu template `post_list.html`.
+
+```html
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+```
+
+Por ejemplo:
+
+```html
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" />
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
+    <title>DAW blog</title>
+</head>
+```

@@ -253,7 +253,7 @@ Para esto necesitamos editar la plantilla, así que vamos a abrir `blog/template
         {% else %}
         <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
-        <h1><a href="/">Django DAW Blog</a></h1>
+        <h1><a href="/">DAW Blog</a></h1>
     </div>
     <div class="content container">
         <div class="row">
@@ -281,7 +281,7 @@ Vamos a agregarle un poco de azúcar a nuestras plantillas mientras estamos en e
     {% else %}
     <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
     {% endif %}
-    <h1><a href="/">Django DAW Blog</a></h1>
+    <h1><a href="/">DAW Blog</a></h1>
 </div>
 ```
 
