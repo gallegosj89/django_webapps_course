@@ -121,7 +121,7 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 ```
 
-Para crear un nuevo formulario `Post`, tenemos que llamar a `PostForm()` y pasarlo a la plantilla. Volveremos a esta _vista_ pero, por ahora, vamos a crear rápidamente una plantilla (template) para el formulario.
+Para crear un nuevo formulario `Post`, tenemos que llamar a `PostForm()` y pasarlo a la plantilla. Volveremos a esta _vista_ pero, por ahora, vamos a crear rápidamente una plantilla para el formulario.
 
 ## Plantilla
 

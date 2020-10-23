@@ -62,7 +62,7 @@ Como puedes ver hemos usado los campos del modelo `User`, heredando del formular
 
 ## La vista de registro
 
-Ya que tenemos el formulario definido vamos a crear un template donde podremos desplegar nuestro formulario. Crea el archivo `register.html` en el folder `blog/templates/registration`. Y añade el siguiente texto:
+Ya que tenemos el formulario definido vamos a crear una plantilla donde podremos desplegar nuestro formulario. Crea el archivo `register.html` en el folder `blog/templates/registration`. Y añade el siguiente texto:
 
 ```html
 {% extends "blog/base.html" %} {% block title %}Crea tu cuenta{% endblock %} {% load crispy_forms_tags %} {% block
@@ -114,7 +114,7 @@ urlpatterns = [
 
 Con esto podemos ejecutar nuestro servidor (`python manage.py runserver`) e ir al URL `http://localhost:8000/accounts/register` y registrar un nuevo usuario. No olvides seguir las reglas de Django para la creación de contraseñas, si fallas aparecerá un mensaje con el cual podrás saber por que falló la creación del usuario.
 
-Ahora podemos agregar un botón a nuestro `login.html` template para poder acceder a la pagina de registro. Añade esta linea justo debajo de donde creamos el botón de login, en caso de que el usuario quiera registrarse primero.
+Ahora podemos agregar un botón a nuestra plantilla `login.html` para poder acceder a la pagina de registro. Añade esta linea justo debajo de donde creamos el botón de login, en caso de que el usuario quiera registrarse primero.
 
 ```html
 ...

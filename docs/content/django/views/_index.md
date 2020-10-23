@@ -230,7 +230,7 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {})
 ```
 
-La última parte es pasar el QuerySet `posts` al template. Observa que creamos una _variable_ para nuestro QuerySet: `posts`. Tómala como el nombre de nuestro QuerySet. De aquí en adelante vamos a referirnos al QuerySet con ese nombre.
+La última parte es pasar el QuerySet `posts` a la plantilla. Observa que creamos una _variable_ para nuestro QuerySet: `posts`. Tómala como el nombre de nuestro QuerySet. De aquí en adelante vamos a referirnos al QuerySet con ese nombre.
 
 En la función `render` ya tenemos el parámetro `request` (todo lo que recibimos del usuario vía Internet) y el archivo `'blog/post_list.html'` como plantilla. El último parámetro, `{}`, es un campo en el que podemos agregar algunas cosas para que la plantilla las use. Necesitamos nombrarlos (los seguiremos llamando `'posts'` por ahora). Se debería ver así: `{'posts': posts}`. Observa que la parte que va antes de `:` es una cadena; necesitas ponerlo entre comillas: `''`.
 

@@ -309,7 +309,7 @@ Este pequeñoicono le da mucha personalidad a una web, y hace que se vea un poco
 Si haz seleccionado un esquema de colores personalizado, o solo es que no te gusta el favicon de más arriba, [esta es una web](https://favicon.io/favicon-generator/) muy sencilla donde puedes crear el tuyo un poco más personalizado.
 {{%/notice%}}
 
-Ahora por último vamos a decir a nuestro template que ligue el archivo cuando cree la página HTML. Solo agrega esta línea dentro de la etiqueta `head` de tu template `post_list.html`.
+Ahora por último vamos a decir a nuestra plantilla que ligue el archivo cuando cree la página HTML. Solo agrega esta línea dentro de la etiqueta `head` de tu plantilla `post_list.html`.
 
 ```html
 <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />

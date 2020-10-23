@@ -45,7 +45,7 @@ def post_draft_list(request):
 
 Esta línea `posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')` se asegura de que solamente vamos a tomar post no publicados (`published_date__isnull=True`) y los ordena por `created_date` (`order_by('created_date')`).
 
-Ok, el último paso es el template. Crea un archivo `blog/templates/blog/post_draft_list.html` y agrega lo siguiente:
+Ok, el último paso es la plantilla. Crea un archivo `blog/templates/blog/post_draft_list.html` y agrega lo siguiente:
 
 ```html
 {% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
