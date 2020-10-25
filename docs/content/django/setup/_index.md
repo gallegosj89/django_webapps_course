@@ -254,7 +254,7 @@ En `settings.py`, encuentra la línea que contiene `TIME_ZONE` y modifícala par
 TIME_ZONE = 'America/Tijuana'
 ```
 
-Un código de idioma consiste en una abreviatura para un idioma, ej. `en` de Ingles o `de` para Aleman, y un código de país, ej. `de` para Alemania o `ch` para Suiza. Al cambiar el código de idioma por defecto hará que los botones y las notificaciones de Django estén en el idioma que elijas. Así tendrás un botón "Cancel" traducido al lenguaje que definas aquí. [Django viene con muchas traducciones preparadas](https://docs.djangoproject.com/en/2.2/ref/settings/#language-code).
+Un código de idioma consiste en una abreviatura para un idioma, ej. `en` de Ingles o `de` para Aleman, y un código de país, ej. `de` para Alemania o `ch` para Suiza. Al cambiar el código de idioma por defecto hará que los botones y las notificaciones de Django estén en el idioma que elijas. Así tendrás un botón "Cancel" traducido al lenguaje que definas aquí. [Django tiene soporte para muchos idiomas](http://www.i18nguy.com/unicode/language-identifiers.html).
 
 Cambia el código de lenguaje cambiando la siguiente línea en el archivo `settings.py`:
 

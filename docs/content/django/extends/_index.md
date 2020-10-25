@@ -43,7 +43,7 @@ Luego ábrelo y copia todo lo que hay en `post_list.html` al archivo `base.html`
                     {% for post in posts %}
                     <div class="post">
                         <div class="date">{{ post.published_date }}</div>
-                        <h1><a href="">{{ post.title }}</a></h1>
+                        <h2><a href="">{{ post.title }}</a></h2>
                         <p>{{ post.text|linebreaksbr }}</p>
                     </div>
                     {% endfor %}
@@ -89,7 +89,7 @@ Ahora vas a cambiar al archivo `post_list.html` de nuevo. Elimina todo arriba de
 {% for post in posts %}
 <div class="post">
     <div class="date">{{ post.published_date }}</div>
-    <h1><a href="">{{ post.title }}</a></h1>
+    <h2><a href="">{{ post.title }}</a></h2>
     <p>{{ post.text|linebreaksbr }}</p>
 </div>
 {% endfor %}
@@ -105,7 +105,7 @@ Esta primera línea indica a esta plantilla que va a extender a otra plantilla l
 {% for post in posts %}
 <div class="post">
     <div class="date">{{ post.published_date }}</div>
-    <h1><a href="">{{ post.title }}</a></h1>
+    <h2><a href="">{{ post.title }}</a></h2>
     <p>{{ post.text|linebreaksbr }}</p>
 </div>
 {% endfor %}
@@ -143,10 +143,10 @@ Ya tenemos un modelo `Post`, así que no necesitamos añadir nada a `models.py`.
 
 ### Añade una URL al título
 
-Vamos a empezar añadiendo una URL dentro del archivo `blog/templates/blog/post_list.html`. Queremos tener un enlace en el titulo del post que nos lleve a una página donde se vea con detalle el contenido. Vamos a cambiar la linea `<h1><a href="">{{ post.title }}</a></h1>`, añadiéndole contenido al atributo `href` (_hypertext reference_ o referencia de hipertexto):
+Vamos a empezar añadiendo una URL dentro del archivo `blog/templates/blog/post_list.html`. Queremos tener un enlace en el titulo del post que nos lleve a una página donde se vea con detalle el contenido. Vamos a cambiar la linea `<h2><a href="">{{ post.title }}</a></h2>`, añadiéndole contenido al atributo `href` (_hypertext reference_ o referencia de hipertexto):
 
 ```html
-<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 ```
 
 Te explicar que significa este misterioso tag `{% url 'post_detail' pk=post.pk %}`:
@@ -237,7 +237,7 @@ Crearemos un archivo en `blog/templates/blog` llamado `post_detail.html`. Se ver
     {% if post.published_date %}
     <div class="date">{{ post.published_date }}</div>
     {% endif %}
-    <h1>{{ post.title }}</h1>
+    <h2>{{ post.title }}</h2>
     <p>{{ post.text|linebreaksbr }}</p>
 </div>
 {% endblock %}

@@ -51,7 +51,7 @@ Ok, el último paso es la plantilla. Crea un archivo `blog/templates/blog/post_d
 {% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
 <div class="post">
     <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
     <p>{{ post.text|truncatechars:200 }}</p>
 </div>
 {% endfor %} {% endblock %}
@@ -287,7 +287,7 @@ Vamos a agregarle un poco de azúcar a nuestras plantillas mientras estamos en e
 
 Esto agrega un mensaje "Hello _user.username_" para recordarle al usuario como ingresó, y que está autenticado. También agrega un enlace de salida del blog -- como puedes ver, aún no funciona.
 
-Decidimos apoyarnos en Django para manejar el ingreso, así que vamos a dejar que Django se encargue de la salida. Mira [Using the Django authentication system](https://docs.djangoproject.com/en/2.1/topics/auth/default/) y ve si encuentras algo.
+Decidimos apoyarnos en Django para manejar el ingreso, así que vamos a dejar que Django se encargue de la salida. Lee la página oficial sobre como usar el [sistema de autenticación de django](https://docs.djangoproject.com/en/3.1/topics/auth/default/).
 
 Ya que termines de leer. Vamos a pensar en agregar una URL en `mysite/urls.py` apuntando a la vista de salida (`django.contrib.auth.views.LogoutView`) así:
 

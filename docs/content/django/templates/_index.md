@@ -242,7 +242,7 @@ Aquí hay un ejemplo de una plantilla completa, copia y pega en `blog/templates/
     </head>
     <body>
         <div>
-            <h1><a href="">DAW Blog</a></h1>
+            <h1><a href="/">DAW Blog</a></h1>
         </div>
 
         <div>
@@ -270,7 +270,7 @@ Aquí hay un ejemplo de una plantilla completa, copia y pega en `blog/templates/
 
 Aquí hemos creado tres secciones `div`.
 
--   El primer elemento `div` contiene el título de nuestro blog -- es un encabezado y un enlace
+-   El primer elemento `div` contiene el título de nuestro blog -- es un encabezado y un enlace a `"/"` que significa ir a la página principal.
 -   Otros dos elementos `div` contienen nuestros blogposts con la fecha de publicación, `h2` con un título que es clickeable y dos `p` (párrafo) de texto, uno para la fecha y uno para nuestro blogpost.
 
 Nos da este efecto:

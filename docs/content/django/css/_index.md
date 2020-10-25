@@ -221,11 +221,11 @@ h4 {
 }
 
 .date {
-    text-align: right;
+    float: right;
     color: #828282;
 }
 
-.save {
+.pull-right {
     float: right;
 }
 
