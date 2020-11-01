@@ -69,7 +69,7 @@ Luego, en el archivo `base.html` reemplaza por completo lo que hay dentro de la 
 </body>
 ```
 
-Básicamente remplazamos todo entre `{% for post in posts %} {% endfor %}` con:
+Básicamente remplazamos todo entre `{% for post in posts %}` y `{% endfor %}` con:
 
 ```python
 {% block content %} {% endblock %}

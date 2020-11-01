@@ -158,7 +158,7 @@ from .models import Post, Comment
 Ahora vamos a `blog/templates/blog/post_detail.html` y antes de la línea `{% for comment in post.comments.all %}`, agrega:
 
 ```html
-<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+<a class="pull-right btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
 ```
 
 Si quieres ir a los detalles del post, deberías ver este error:

@@ -239,8 +239,9 @@ h4 {
 .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+    font-size: 16pt;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .post {
