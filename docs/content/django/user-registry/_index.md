@@ -5,7 +5,7 @@ weight: 11
 
 Hasta este momento la única forma de agregar usuarios es utilizando al linea de comandos o entrando al administrador de Django. Esta no es la manera ideal si queremos que la gente sea capaz de crear cuentas de usuario desde el front end de nuestro sitio.
 
-## Instalando _Crispy Forms_
+### Instalando _Crispy Forms_
 
 Vamos a usar una librería llamada _Cryspi Forms_ que nos ayudara a dar una mejor presentación a nuestro formulario. Para instalarla utilizamos el instalador de paquetes de Python (PIP).
 
@@ -38,7 +38,7 @@ CRISPY_TEMPLATE_PACK="bootstrap3"
 
 Le estamos diciendo a la librería de _Crispy Forms_ que utilizaremos Bootstrap version 3.
 
-## Formulario de registro
+### Formulario de registro
 
 Django incluye un formulario por defecto que podemos utilizar para registrar usuarios. En ocasiones futuras podríamos querer manipular los campos del formulario, para eso vamos a crear una instancia del proveído por Django y agregarle campos que nos parezcan necesarios. Ve a `forms.py` en nuestro folder de `blog`, y agrega las siguientes lineas al inicio:
 
@@ -60,7 +60,7 @@ class RegisterForm(UserCreationForm):
 
 Como puedes ver hemos usado los campos del modelo `User`, heredando del formulario `UserCreationForm` hemos sido capaces de añadir un campo extra llamado "_email_", este nos puede servir en un futuro si queremos validar que un usuario que ya ha creado una cuenta utilizando un correo electrónico no pueda crear otra cuenta utilizando ese mismo correo. Esto ya queda de tu parte el implementarlo.
 
-## La vista de registro
+### La vista de registro
 
 Ya que tenemos el formulario definido vamos a crear una plantilla donde podremos desplegar nuestro formulario. Crea el archivo `register.html` en el folder `blog/templates/registration`. Y añade el siguiente texto:
 
