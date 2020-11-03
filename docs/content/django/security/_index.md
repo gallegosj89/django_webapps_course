@@ -240,7 +240,7 @@ Esto hace que despues de hacer login, se redirecciona al usuario a la página de
 Ya definimos como autorizar usuarios. Vemos los botones para añadir post. Ahora queremos asegurarnos que el botón de ingreso les aparezca a todos los usuarios Podemos agregar el botón de ingreso con esta línea:
 
 ```html
-<a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+<a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
 ```
 
 Para esto necesitamos editar la plantilla base, así que vamos a abrir `base.html` y modificarla de tal manera que la parte dentro de `<body>` se verá así:
