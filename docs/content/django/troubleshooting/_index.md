@@ -23,13 +23,13 @@ sudo apt install git python3 python3-pip python3-virtualenv
 git clone https://github.com/gallegosj89/mi-primer-blog.git django-daw
 ```
 
-4. Crear un ambiente virtual. Recuerda crear un ambiente virtual utilizando Python 3, dentro de la carpeta de su proyecto.
+4. Crear un entorno virtual. Recuerda crear un entorno virtual utilizando Python 3, dentro de la carpeta de su proyecto.
 
 ```bash
 python3 -m venv django-daw/env
 ```
 
-5. Entrar a la carpeta de su proyecto, iniciar su ambiente virtual, e instalar el framework de Django.
+5. Entrar a la carpeta de su proyecto, iniciar su entorno virtual, e instalar el framework de Django.
 
 ```bash
 cd django-daw

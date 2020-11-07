@@ -209,8 +209,8 @@ De acuerdo, es hora de ver tu modelo Post. Recuerda ejecutar `python manage.py r
 
 Para poder ingresar deberás crear un _super-usuario_ - un usuario que tiene control sobre todo lo que hay en el sitio. Vuelve hacia atrás a tu línea de comandos (**ctrl+c**) y teclea `python manage.py createsuperuser`, presiona **Enter**.
 
-{{%notice info%}}
-Recuerda, para ejecutar nuevos comando mientras el servidor web esta corriendo, abre una nueva terminal y activa tu ambiente virtual.
+{{%notice warning%}}
+Recuerda, para ejecutar nuevos comando mientras el servidor web esta corriendo, abre una nueva terminal y activa tu entorno virtual.
 {{%/notice%}}
 
 Cuando sea necesario, teclea tu nombre de usuario (en minúsculas, sin espacios), dirección de e-mail y contraseña cuando sean requeridos. No te preocupes que no puedes ver tu contraseña mientras la tecleas - así es como debe ser. Simplemente escríbela y presiona **Enter** para continuar. La salida de este comando debería verse así (nombre de usuario y email deberían ser los tuyos):

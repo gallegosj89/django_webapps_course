@@ -140,7 +140,7 @@ Bueno, vamos a ver cómo quedará el template de nombre `post_edit.html`:
 <h2>Nuevo post</h2>
 <form method="POST" class="post-form">
     {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="pull-right btn btn-default">Guardar</button>
+    <input type="submit" class="btn btn-default" value="Guardar" />
 </form>
 {% endblock %}
 ```
@@ -258,9 +258,7 @@ Si algo del siguiente proceso no te queda claro, recuerda revisar las secciones 
 Abre el archivo `blog/templates/blog/post_detail.html` y añade esta línea justo antes del `if` de la fecha de publicación:
 
 ```html
-<a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"
-    ><span class="glyphicon glyphicon-pencil"></span
-></a>
+<a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 ```
 
 nuestra plantilla deberá verse así:
@@ -268,9 +266,7 @@ nuestra plantilla deberá verse así:
 ```html
 {% extends 'blog/base.html' %} {% block content %}
 <div class="post">
-    <a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"
-        ><span class="glyphicon glyphicon-pencil"></span
-    ></a>
+    <a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
     {% if post.published_date %}
     <div class="date">
         <p>{{ post.published_date }}</p>
@@ -345,18 +341,14 @@ Toma en cuenta que esto **no** va a proteger completamente contra la creación d
 También vamos a encerrar en un template tag similar al botón de edición que creamos una hace un momento, así usuarios no autenticados no serán capaces de editar posts existentes tan fácilmente. Abre `blog/templates/blog/post_detail.html` y encuentra este código:
 
 ```html
-<a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"
-    ><span class="glyphicon glyphicon-pencil"></span
-></a>
+<a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 ```
 
 cambialo a este otro:
 
 ```html
 {% if user.is_authenticated %}
-<a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"
-    ><span class="glyphicon glyphicon-pencil"></span
-></a>
+<a class="pull-right btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 {% endif %}
 ```
 

@@ -21,7 +21,7 @@ Para salir del interprete solo ejecuta el comando `exit()`.
 
 `pip` es el [instalador de paquetes](https://packaging.python.org/guides/tool-recommendations/) para Python. Tu puedes utilizar `pip` para instalar paquetes desde el [Indice de Paquetes de Python](https://pypi.org/) y otros indices.
 
-Esta herramienta viene instalada por defecto en versiones de Python mayores a **3.4**, si estas usando un [Ambiente Virtual](https://packaging.python.org/tutorials/installing-packages/#creating-and-using-virtual-environments) creado con [virtualenv](https://packaging.python.org/key_projects/#virtualenv) o [pyenv](https://packaging.python.org/key_projects/#venv), solo asegurate de actualizar [`pip`](https://pip.pypa.io/en/stable/installing/#upgrading-pip) con el siguiente comando.
+Esta herramienta viene instalada por defecto en versiones de Python mayores a **3.4**, si estas usando un [Entorno Virtual](https://packaging.python.org/tutorials/installing-packages/#creating-and-using-virtual-environments) creado con [virtualenv](https://packaging.python.org/key_projects/#virtualenv) o [pyenv](https://packaging.python.org/key_projects/#venv), solo asegurate de actualizar [`pip`](https://pip.pypa.io/en/stable/installing/#upgrading-pip) con el siguiente comando.
 
 {{< tabs >}}
 {{< tab "cmd" >}}

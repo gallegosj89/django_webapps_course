@@ -77,9 +77,7 @@ por estas:
 {% if post.published_date %}
 <div class="date">{{ post.published_date }}</div>
 {% else %}
-<a class="pull-right btn btn-default" href="{% url 'post_publish' pk=post.pk %}"
-    ><span class="glyphicon glyphicon-check"></span
-></a>
+<a class="pull-right btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-check"></span></a>
 {% endif %}
 ```
 
@@ -115,9 +113,7 @@ Ahora finalmente podemos utilizarlo al dar clic en el botón para _aprovar_, ent
 Vamos a abrir `post_detail.html` de nuevo y vamos a añadir esta línea justo sobre la línea del botón editar:
 
 ```html
-<a class="pull-right btn btn-default" href="{% url 'post_remove' pk=post.pk %}"
-    ><span class="glyphicon glyphicon-remove"></span
-></a>
+<a class="pull-right btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
 ```
 
 Ahora necesitamos un patrón de URL (`blog/urls.py`):
@@ -206,18 +202,8 @@ Luego necesitamos agregar una plantilla para la página de ingreso, así que cre
 
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-    </table>
-
-    <input type="submit" value="Entrar" />
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-default" value="Entrar" />
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
 {% endblock %}
@@ -249,12 +235,10 @@ Para esto necesitamos editar la plantilla base, así que vamos a abrir `base.htm
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
-        <p class="top-menu">
-            <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out"> </span></a>
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        </p>
+        <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out"></span></a>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% else %}
-        <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span></a>
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
         {% endif %}
         <h1><a href="/">DAW Blog</a></h1>
     </div>
@@ -279,14 +263,12 @@ Vamos a agregarle un poco de azúcar a nuestras plantillas mientras estamos en e
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
-        <p class="top-menu">
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-            Hola {{ user.username }}
-            <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out"> </span></a>
-        </p>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+        <p class="top-menu">Hola {{ user.username }}</p>
+        <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out"></span></a>
         {% else %}
-        <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span></a>
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
         {% endif %}
         <h1><a href="/">DAW Blog</a></h1>
     </div>

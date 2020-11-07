@@ -213,7 +213,7 @@ Como el error nos dice, la plantilla no existe aún. Entonces vamos a crear una 
 <h1>New comment</h1>
 <form method="POST" class="post-form">
     {% csrf_token %} {{ form.as_p }}
-    <button type="submit" class="pull-right btn btn-default">Send</button>
+    <input type="submit" class="btn btn-default" value="Enviar" />
 </form>
 {% endblock %}
 ```
