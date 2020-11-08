@@ -329,3 +329,34 @@ Si has seguido todo lo anterior, en este punto, tu blog ahora:
 -   Permite al usuario hacer login utilizando su nombre de usuario y contraseña
 -   Tiene un nivel de seguridad donde solo permite a usuarios que han hecho login: agregar, editar, publicar o eliminar posts
 -   Permite al usuario hacer logout
+
+## Desplegar a producción
+
+De nuevo; hemos hecho cambios en nuestro ambiente de desarrollo, hicimos algunas pruebas, y todo funciona correctamente. Es momento de desplegar la aplicación a nuestro servidor de producción.
+
+Primero haz un punto de salvado (`commit`) de tu nuevo código, y haz `push` a tu repositorio remoto.
+
+```bash
+cd ~/django-daw
+git status
+git add .
+git status
+git commit -m "se agregó seguridad al sitio y funcionalidad de login/logout"
+git pull
+git push
+```
+
+Luego en una [consola Bash de PythonAnywhere](https://www.pythonanywhere.com/consoles/), descarga el nuevo código.
+
+```bash
+cd ~/gallegosj89.pythonanywhere.com
+git pull
+```
+
+Debido a los cambios de hojas de estilos también hay que actualizar la colección de archivos estáticos.
+
+```bash
+python manage.py collectstatic
+```
+
+Finalmente, ve a la pestaña [Web](https://www.pythonanywhere.com/web_app_setup/) y haz click en **Reload**.

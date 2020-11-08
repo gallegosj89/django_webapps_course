@@ -3,9 +3,9 @@ title: Comentarios
 weight: 10
 ---
 
-Actualmente, solamente tenemos un modelo de Post, ¿Qué si queremos recibir retro alimentación de tus lectores y dejarlos comentar?
+Actualmente, solamente tenemos un modelo de Post, ¿Qué si queremos recibir retro alimentación de nuestros lectores y dejarlos comentar?
 
-## Crea un modelo de comentarios para el blog
+### Modelo de comentarios
 
 Vamos a abrir `blog/models.py` y pega esta pieza de código al final del archivo:
 
@@ -25,17 +25,19 @@ class Comment(models.Model):
         return self.text
 ```
 
-Puedes ir atrás a la práctica de Modelos en Django si necesitas refrescar lo que cada tipo de campo significa.
+Puedes ir atrás a la sección de [modelos]({{< ref "../models" >}}) si necesitas refrescar lo que cada tipo de campo significa. En esta práctica vamos a tener un nuevo tipo de campo:
 
-En esta práctica vamos a tener un nuevo tipo de campo:
+-   `models.BooleanField` - Es un campo de tipo cierto/falso.
 
--   `models.BooleanField` - Es un campo cierto/falso.
+La opción `related_name` en `models.ForeignKey` nos permite enlazar y tener acceso a los comentarios desde el modelo Post.
 
-La opción `related_name` en `models.ForeignKey` nos permite tener acceso a los comentarios desde el modelo Post.
+### Migrando los cambios
 
-## Creando tablas para los modelos en tu base de datos
+Es tiempo de agregar nuestro modelo de comentarios a la base de datos. Para hacer esto le vamos a decir a Django que revise los cambios de nuestro modelo. Escribe `python manage.py makemigrations blog` en tu línea de comandos. Deberías ver algo como esto:
 
-Es tiempo de agregar nuestro modelo de comentarios a la base de datos. Para hacer esto le vamos a decir a Django que haga los cambios a nuestro modelo. Escribe `python manage.py makemigrations blog` en tu línea de comandos. Deberías ver algo como esto:
+{{%notice warning%}}
+Recuerda entrar al directorio de tu proyecto, puedes llegar allí con `cd ~/django-daw` o `cd %userprofile%\django-daw`. Despues inicia el entorno virtual.
+{{%/notice%}}
 
 ```bash
 (env) ~/django-daw$ python manage.py makemigrations blog
@@ -55,11 +57,11 @@ Running migrations:
   Applying blog.0002_comment... OK
 ```
 
-Nuestro modelo de comentarios existe ahora en la base de datos, ¿No sería genial acceder a el desde nuestro panel de administración?
+Nuestro modelo de comentarios existe ahora en la base de datos, revisemos el modelo en el panel de administrador.
 
-## Registra el modelo de comentarios en el panel de administrador
+### Registra el nuevo modelo
 
-Para registrar el modelo de Comentario en el panel de administrador, ve a `blog/admin.py` y agrega esta línea:
+Para registrar el modelo _Comment_ en el panel de administrador, ve a `blog/admin.py` y agrega esta línea:
 
 ```python
 admin.site.register(Comment)
@@ -83,9 +85,11 @@ admin.site.register(Comment)
 
 Si escribes `python manage.py runserver` en la línea de comandos y vas a `http://127.0.0.1:8000/admin/` en tu navegador, ahora podrás acceder a la lista de comentarios, y también tendrás la posibilidad de agregar y eliminar comentarios.
 
-## Has tus comentarios visibles
+![admin-comment.png](admin-comment.png?height=250px)
 
-Ve al archivo `blog/templates/blog/post_detail.html` y agrega el siguiente código antes de la etiqueta `{% endblock %}`:
+### Muestra los comentarios
+
+Ve al template `post_detail.html` y agrega el siguiente código antes de la etiqueta `{% endblock %}`:
 
 ```html
 <hr />
@@ -102,7 +106,9 @@ Ve al archivo `blog/templates/blog/post_detail.html` y agrega el siguiente códi
 
 Ahora puedes ver la sección de comentarios en los detalles del post.
 
-Pero puede verse un poco mejor, así que vamos a agregar algún CSS al final del archivo `static/css/blog.css`:
+![no_comments.png](no_comments.png?height=400px)
+
+Pero puede verse un poco mejor, así que vamos a agregar algún CSS al final de nuestra hoja de estilos `static/css/blog.css`:
 
 ```CSS
 .comment {
@@ -110,37 +116,41 @@ Pero puede verse un poco mejor, así que vamos a agregar algún CSS al final del
 }
 ```
 
-También vamos a dejar a los visitantes ver un contador sobre los comentarios que dejan en la página. Ve al archivo `blog/templates/blog/post_list.html` y agrega una línea como esta:
+También vamos a dejar a los visitantes ver un contador sobre los comentarios que dejan en la página. Ve al archivo `post_list.html` y agrega una línea como esta:
 
 ```html
-<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+<a href="{% url 'post_detail' pk=post.pk %}" class="pull-right">Comentarios: {{ post.comments.count }}</a>
 ```
 
-Después de esto, tu plantilla debería verse así:
+Tu plantilla debería verse así:
 
 ```html
 {% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
 <div class="post">
     <div class="date">{{ post.published_date }}</div>
     <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-    <p>{{ post.text|linebreaksbr }}</p>
-    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+    <p>{{ post.text|linebreaksbr|truncatechars:200 }}</p>
+    <a href="{% url 'post_detail' pk=post.pk %}" class="pull-right">Comentarios: {{ post.comments.count }}</a>
 </div>
 {% endfor %} {% endblock content %}
 ```
 
-## Deja a tus lectores escribir comentarios
+![comment_count.png](comment_count.png?height=250px)
+
+### Añade comentarios
 
 Ahora podemos ver los comentarios hechos en nuestro blog, pero no podemos agregarlos. Cambiemos eso.
 
-Ve a `blog/forms.py` y agrega las siguientes líneas al final del archivo:
+Ve a `forms.py` y agrega las siguientes líneas al final del archivo:
 
 ```python
 class CommentForm(forms.ModelForm):
-
     class Meta:
         model = Comment
-        fields = ('author', 'text',)
+        fields = (
+            'author',
+            'text',
+        )
 ```
 
 Recuerda importar el modelo Comentario, cambiando la línea:
@@ -149,31 +159,31 @@ Recuerda importar el modelo Comentario, cambiando la línea:
 from .models import Post
 ```
 
-en:
+aa:
 
 ```python
 from .models import Post, Comment
 ```
 
-Ahora vamos a `blog/templates/blog/post_detail.html` y antes de la línea `{% for comment in post.comments.all %}`, agrega:
+Ahora vamos a la plantilla  `post_detail.html` y antes de la línea `{% for comment in post.comments.all %}`, agrega:
 
 ```html
-<a class="pull-right btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Agregar comentario</a>
 ```
 
 Si quieres ir a los detalles del post, deberías ver este error:
 
-![1801-url_error](1801-url_error.png)
+![1801-url_error](1801-url_error.png?height=150px)
 
-Ahora sabemos como arreglarlo. Ve a `blog/urls.py` y agrega esto a `urlpatterns`:
+Ahora sabemos como arreglarlo. Ve a `blog/urls.py` y agrega este nuevo patron de URL:
 
 ```python
-path('post/<int:pk>/comment', views.add_comment_to_post, name='add_comment_to_post'),
+path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 ```
 
 Refresca la página y ahora tenemos un error diferente.
 
-![1802-views_error](1802-views_error.png)
+![1802-views_error](1802-views_error.png?height=150px)
 
 Para agregar este error, agrega esto a `blog/views.py`:
 
@@ -200,17 +210,17 @@ from .forms import PostForm, CommentForm
 
 Ahora vamos a los detalles de la página y deberíamos ver el botón "Add Comment":
 
-![1803-add_comment_button](1803-add_comment_button.png)
+![add-comment.png](add-comment.png?height=100px)
 
 Sin embargo, cuando des click en el botón verás:
 
-![1804-template_error](1804-template_error.png)
+![1804-template_error](1804-template_error.png?height=150px)
 
-Como el error nos dice, la plantilla no existe aún. Entonces vamos a crear una en `blog/templates/blog/add_comment_to_post.html` y agregar el siguiente código:
+Como el error nos dice, la plantilla no existe aún. Entonces vamos a crear la plantilla `add_comment_to_post.html` y agregar el siguiente código:
 
 ```html
 {% extends 'blog/base.html' %} {% block content %}
-<h1>New comment</h1>
+<h1>Nuevo comentario</h1>
 <form method="POST" class="post-form">
     {% csrf_token %} {{ form.as_p }}
     <input type="submit" class="btn btn-default" value="Enviar" />
@@ -218,13 +228,15 @@ Como el error nos dice, la plantilla no existe aún. Entonces vamos a crear una 
 {% endblock %}
 ```
 
+![comment_new.png](comment_new.png?height=400px)
+
 Ahora nuestros lectores puede agregar lo que piensan en nuestros post.
 
-## Moderando los comentarios
+### Modera los comentarios
 
 No todos los comentarios deberían ser mostrados. Como dueño del blog, posiblemente quieras la opción de aprobar o eliminar comentarios. Vamos a hacer algo sobre esto.
 
-Ve a `blog/templates/blog/post_detail.html` y cambia las líneas:
+Ve a la plantilla `post_detail.html` y cambia las líneas:
 
 ```html
 {% for comment in post.comments.all %}
@@ -245,13 +257,9 @@ a:
 <div class="comment">
     <div class="date">
         {{ comment.created_date }} {% if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"
-            ><span class="glyphicon glyphicon-remove"></span
-        ></a>
+        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %} {% if not comment.approved_comment %}
-        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"
-            ><span class="glyphicon glyphicon-ok"></span
-        ></a>
+        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
         {% endif %}
     </div>
     <strong>{{ comment.author }}</strong>
@@ -262,16 +270,14 @@ a:
 {% endfor %}
 ```
 
-Deberías ver un `NoReverseMatch`, porque no hay ninguna URL que concuerde con `comment_remove` y `comment_approve` aún.
-
-Para arreglar este error, agregamos estas URLs a `blog/urls.py`:
+Deberías ver un `NoReverseMatch`, porque no hay ningún patrón de URL que concuerde con `comment_remove` y `comment_approve` aún. Para arreglar este error, agregamos estos patrones de URL a `blog/urls.py`:
 
 ```python
-path('comment/<int:pk>/approve', views.comment_approve, name='comment_approve'),
-path('comment/<int:pk>/remove', views.comment_remove, name='comment_remove'),
+path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
+path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
 ```
 
-Ahora deberías ver un AttributeError. Para arreglar este error, agrega las siguiente vistas en `blog/views.py`:
+Ahora deberías ver un `AttributeError`. Para arreglar este error, agrega las siguiente vistas en `views.py`:
 
 ```python
 @login_required
@@ -293,12 +299,12 @@ Necesitas importar Comment al comienzo del archivo:
 from .models import Post, Comment
 ```
 
-Hay un pequeño cambio que podemos hacer. en nuestra página de lista -- debajo de posts -- actualmente vemos el número de los comentarios que el post ha recibido. Vamos a cambiar esto para que los usuariso no autenticados vean el número de comentarios aprobados.
+Hay un pequeño cambio que podemos hacer. en nuestra página de lista -- debajo de posts -- actualmente vemos el número de los comentarios que el post ha recibido. Vamos a cambiar esto para que los usuarios no autenticados vean solo el número de comentarios aprobados.
 
 Para arreglar esto, ve a `blog/templates/blog/post_list.html` y cambia la línea:
 
 ```html
-<a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+<a href="{% url 'post_detail' pk=post.pk %}">Comentarios: {{ post.comments.count }}</a>
 ```
 
 a:
@@ -311,7 +317,7 @@ a:
 {% endif %}
 ```
 
-finalmente, añade el método al modelo `Post` en `blog/models.py`:
+finalmente, añade el método `approved_comments` al modelo `Post` en `blog/models.py`:
 
 ```python
 def approved_comments(self):
@@ -319,3 +325,34 @@ def approved_comments(self):
 ```
 
 Ahora puedes ver la característica de comentarios finalizada.
+
+## Desplegar a producción
+
+De nuevo; hemos hecho cambios en nuestro ambiente de desarrollo, hicimos algunas pruebas, y todo funciona correctamente. Es momento de desplegar la aplicación a nuestro servidor de producción.
+
+Primero haz un punto de salvado (`commit`) de tu nuevo código, y haz `push` a tu repositorio remoto.
+
+```bash
+cd ~/django-daw
+git status
+git add .
+git status
+git commit -m "se agregó la funcionalidad de comentarios"
+git pull
+git push
+```
+
+Luego en una [consola Bash de PythonAnywhere](https://www.pythonanywhere.com/consoles/), descarga el nuevo código.
+
+```bash
+cd ~/gallegosj89.pythonanywhere.com
+git pull
+```
+
+Debido a los cambios de hojas de estilos también hay que actualizar la colección de archivos estáticos.
+
+```bash
+python manage.py collectstatic
+```
+
+Finalmente, ve a la pestaña [Web](https://www.pythonanywhere.com/web_app_setup/) y haz click en **Reload**.
