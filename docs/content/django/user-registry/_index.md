@@ -57,7 +57,12 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ["username", "email", "password1", "password2"]
+        fields = (
+            "username",
+            "email",
+            "password1",
+            "password2"
+        )
 ```
 
 Como puedes ver hemos definidido que el formulario utilizará los campos del modelo `User`, que va a heredar del formulario `UserCreationForm` y hemos sido capaces de añadir un campo extra llamado "_email_", este nos puede servir en un futuro si queremos validar que un usuario que ya ha creado una cuenta utilizando un correo electrónico no pueda crear otra cuenta utilizando ese mismo correo. Esto ya queda de tu parte el implementarlo.
@@ -77,7 +82,7 @@ Ya que tenemos el formulario definido vamos a crear una plantilla donde podremos
 <form method="POST" class="form-group">
     {% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" value="registrar" />
+    <input type="submit" value="Registrar" />
 </form>
 {% endblock %}
 ```
@@ -153,6 +158,13 @@ Luego en una [consola Bash de PythonAnywhere](https://www.pythonanywhere.com/con
 ```bash
 cd ~/gallegosj89.pythonanywhere.com
 git pull
+workon gallegosj89.pythonanywhere.com
+```
+
+Aquí también tenemos que instalar el paquete _django-crispy-forms_.
+
+```bash
+pip install django-crispy-forms
 ```
 
 Debido a los cambios de hojas de estilos también hay que actualizar la colección de archivos estáticos.
