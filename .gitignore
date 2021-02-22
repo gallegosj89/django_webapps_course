@@ -2,3 +2,4 @@ public/
 docs/public/
 */venv/
 .vscode/
+.vs/
