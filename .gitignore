@@ -3,3 +3,4 @@ docs/public/
 */venv/
 .vscode/
 .vs/
+*.lock
