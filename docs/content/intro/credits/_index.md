@@ -48,8 +48,8 @@ hide:
 }
 </style>
 
-<div class="ghContributors">
-{{%ghcontributors "https://api.github.com/repos/vjeantet/hugo-theme-docport/contributors?per_page=100" %}}
+<!-- <div class="ghContributors">
+{{%ghcontributors "https://api.github.com/repos/vjeantet/hugo-theme-docport/contributors?per_page=100" %}} -->
 
 <div>
 	<img src="https://avatars2.githubusercontent.com/u/394382?v=3" class="inline" width="32" height="32" style="height: 32px;height: 32px; vertical-align:middle; ">

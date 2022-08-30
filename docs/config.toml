@@ -7,6 +7,7 @@ theme = "hugo-theme-docport"
 themesdir = "themes/"
 pygmentsCodeFences = true
 pygmentsStyle = "monokai"
+ignoreErrors = ["error-remote-getjson"]
 
 
 defaultContentLanguageInSubdir= false

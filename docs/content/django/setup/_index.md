@@ -73,6 +73,10 @@ created virtual environment CPython3.9.0.final.0-64 in 6055ms
 {{< /tab >}}
 {{< /tabs >}}
 
+{{%notice warning%}}
+Si el comando `virtualenv env` no es encontrado entonces intentar con el comando `python -m virtualenv venv`
+{{%/notice%}}
+
 ### Trabajar con `virtualenv`
 
 Este comando anterior creará un directorio llamado `env` que contiene nuestro entorno virtual (básicamente un montón de archivos y carpetas). Todo lo que queremos hacer ahora es iniciarlo ejecutando:
