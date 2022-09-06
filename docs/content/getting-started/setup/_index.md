@@ -100,7 +100,7 @@ Git para Windows se enfoca en ofrecer un conjunto de herramientas nativas y livi
 Para instalar Python ejecuta el comando siguiente desde la línea de comandos:
 
 ```sh
-choco install -y python3
+choco install -y python3 --params "/NoLockdown"
 ```
 
 Python 3.x es un lenguaje de programación que le permite trabajar más rápido e integrar sus sistemas de manera más efectiva. Puede aprender a usar Python 3.x y ver ganancias casi inmediatas en productividad y menores costos de mantenimiento.
@@ -129,7 +129,7 @@ Para instalar el comando `tree`, en la misma PowerShell de arriba ejecuta `choco
 
 ### pip
 
-Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para actualizar la distribución de `pip` que viene con Python3.
+Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para actualizar la distribución de `pip` que viene con Python.
 
 ```sh
 python -m pip install --user -U pip

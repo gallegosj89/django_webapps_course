@@ -293,6 +293,13 @@ Regresa a la pagina principal [Dashboard](https://www.pythonanywhere.com/) hacie
 
 ![pa-bash_console.png](pa-bash_console.png?height=250px)
 
+Primero que nada actualizaremos las herramientas de python en nuestra consola, hazlo con los siguientes comandos.
+
+```bash
+python3.7 -m pip install --user -U pip
+python3.7 -m pip install --user -U virtualenv
+```
+
 Desplegar una aplicación web en PythonAnywhere significar jalar (pull) el código que tenemos en nuestro repositorio de Github, y entonces configurar PythonAnywhere para reconocerlo e iniciar a servirlo como aplicación web. Hay maneras manuales de como hacerlo, pero PythonAnywhere provee una herramienta de ayuda que lo hará por ti. Vamos a instalarla primero:
 
 ```bash
