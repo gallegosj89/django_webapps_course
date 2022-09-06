@@ -71,7 +71,7 @@ Es buena idea utilizar el comando `git status` antes de `git add` o cuando no es
 
 ```bash
 $ git status
-On branch master
+On branch main
 
 Initial commit
 
@@ -197,10 +197,10 @@ git remote add origin git@gitlab.com:gallegosj89/mi-primer-blog.git
 No olvides usar la URL de **tu** repositorio y no la que aparece en este tutorial.
 {{% /notice %}}
 
-Una vez enlazado nuestro repositorio, solo nos queda "empujar" los cambios locales para que se guarden en nuestro repositorio remoto. Para esto utilizamos el siguiente comando, donde le decimos a _Git_ que mande nuestro código al remoto de nombre `origin`, a la rama `master`, y con la opción `-u` (que solo será utilizada esta vez) le decimos que nuestra rama local `master` le dará seguimiento a la rama remota en el futuro.
+Una vez enlazado nuestro repositorio, solo nos queda *"empujar"* los cambios locales para que se guarden en nuestro repositorio remoto. Para esto utilizamos el siguiente comando, donde le decimos a _Git_ que mande nuestro código al remoto de nombre `origin`, a la rama `main`, y con la opción `-u` (que solo será utilizada esta vez) le decimos que nuestra rama local `main` le dará seguimiento a la rama remota en el futuro.
 
 ```bash
-git push -u origin master
+git push -u origin main
 ```
 
 Una vez los cambios estén arriba, deberías de poder ver los archivos de tu repositorio en Gitlab.
@@ -258,10 +258,10 @@ git remote add origin git@github.com:gallegosj89/mi-primer-blog.git
 No olvides usar la URL de **tu** repositorio y no la que aparece en este tutorial.
 {{% /notice %}}
 
-Una vez enlazado nuestro repositorio, solo nos queda "empujar" los cambios locales para que se guarden en nuestro repositorio remoto. Para esto utilizamos el siguiente comando, donde le decimos a _Git_ que mande nuestro código al remoto de nombre `origin`, a la rama `master`, y con la opción `-u` (que solo será utilizada esta vez) le decimos que nuestra rama local `master` le dará seguimiento a la rama remota en el futuro.
+Una vez enlazado nuestro repositorio, solo nos queda "empujar" los cambios locales para que se guarden en nuestro repositorio remoto. Para esto utilizamos el siguiente comando, donde le decimos a _Git_ que mande nuestro código al remoto de nombre `origin`, a la rama `main`, y con la opción `-u` (que solo será utilizada esta vez) le decimos que nuestra rama local `main` le dará seguimiento a la rama remota en el futuro.
 
 ```bash
-git push -u origin master
+git push -u origin main
 ```
 
 Una vez los cambios estén arriba, deberías de poder ver los archivos de tu repositorio en Github.
@@ -316,7 +316,7 @@ cat ~/.ssh/id_rsa.pub
 Ahora ejecutamos la herramienta de ayuda que automáticamente configura nuestra aplicación web en el servidor de PythonAnywhere. Escribe lo siguiente en la consola de PythonAnywhere (no olvides usar la liga SSH de **tu** repositorio).
 
 ```bash
-pa_autoconfigure_django.py git@gitlab.com:gallegosj89/mi-primer-blog.git --python=3.7 --nuke
+pa_autoconfigure_django.py git@gitlab.com:gallegosj89/mi-primer-blog.git --python=3.10 --nuke
 ```
 
 Mientras observas como se ejecuta, podrás ver lo que esta haciendo:
