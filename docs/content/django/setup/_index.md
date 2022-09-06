@@ -143,7 +143,7 @@ Cuando trabajes en un entorno virtual, Python automáticamente se referirá a la
 
 ### Instalar Django
 
-Ahora que tienes tu entorno virtual activo, puedes instalar Django. Para esto solo ejecuta el comando `python -m pip install django` para instalar la version más nueva de Django.
+Ahora que tienes tu entorno virtual activo, puedes instalar Django. Para esto solo ejecuta el comando `python -m pip install -U django` para instalar la version más nueva de Django.
 
 {{< tabs >}}
 {{< tab "bash" >}}
@@ -166,7 +166,7 @@ Successfully installed asgiref-3.2.10 django-3.1.2 pytz-2020.1 sqlparse-0.4.1
 {{< tab "cmd" >}}
 
 ```bat
-(env) >python -m pip install django
+(env) >python -m pip  install django
 Collecting django
   Using cached Django-3.1.2-py3-none-any.whl (7.8 MB)
 Collecting sqlparse>=0.2.2

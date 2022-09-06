@@ -34,7 +34,7 @@ python3 -m venv django-daw/env
 ```bash
 cd django-daw
 source env/bin/activate
-pip install django
+python -m pip install -U django
 ```
 
 6. Ejecutar los comando de inicialización de un proyecto de Django (p.e. migrar la base de datos).

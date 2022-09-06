@@ -296,7 +296,7 @@ Regresa a la pagina principal [Dashboard](https://www.pythonanywhere.com/) hacie
 Desplegar una aplicación web en PythonAnywhere significar jalar (pull) el código que tenemos en nuestro repositorio de Github, y entonces configurar PythonAnywhere para reconocerlo e iniciar a servirlo como aplicación web. Hay maneras manuales de como hacerlo, pero PythonAnywhere provee una herramienta de ayuda que lo hará por ti. Vamos a instalarla primero:
 
 ```bash
-pip3 install --user pythonanywhere
+python3.7 -m pip install --user -U pythonanywhere
 ```
 
 Ese comando debería de imprimir algo como `Collecting pythonanywhere`, y eventualmente terminar con una línea diciendo `Successfully installed (...) pythonanywhere- (...)`.
@@ -316,7 +316,7 @@ cat ~/.ssh/id_rsa.pub
 Ahora ejecutamos la herramienta de ayuda que automáticamente configura nuestra aplicación web en el servidor de PythonAnywhere. Escribe lo siguiente en la consola de PythonAnywhere (no olvides usar la liga SSH de **tu** repositorio).
 
 ```bash
-pa_autoconfigure_django.py git@gitlab.com:gallegosj89/mi-primer-blog.git --python=3.10 --nuke
+pa_autoconfigure_django.py git@gitlab.com:gallegosj89/mi-primer-blog.git --python=3.7 --nuke
 ```
 
 Mientras observas como se ejecuta, podrás ver lo que esta haciendo:

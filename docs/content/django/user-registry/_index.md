@@ -14,7 +14,7 @@ Recuerda entrar al directorio de tu proyecto, puedes llegar allí con `cd ~/djan
 {{%/notice%}}
 
 ```bash
-pip install django-crispy-forms
+python -m pip install django-crispy-forms
 ```
 
 Ahora modificamos nuestro archivo `settings.py` donde habilitaremos la librería. Primero busca la lista `INSTALLED_APPS` y modificarla para que se vea de la siguiente manera.
@@ -164,7 +164,7 @@ workon gallegosj89.pythonanywhere.com
 Aquí también tenemos que instalar el paquete _django-crispy-forms_.
 
 ```bash
-pip install django-crispy-forms
+python -m pip install django-crispy-forms
 ```
 
 Debido a los cambios de hojas de estilos también hay que actualizar la colección de archivos estáticos.

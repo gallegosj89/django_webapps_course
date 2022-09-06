@@ -132,7 +132,7 @@ Para instalar el comando `tree`, en la misma PowerShell de arriba ejecuta `choco
 Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para actualizar la distribución de `pip` que viene con Python3.
 
 ```sh
-python -m pip install -U pip
+python -m pip install --user -U pip
 ```
 
 {%notice info%}
@@ -146,7 +146,7 @@ Sí `python` no es encontrado usa `python3`
 Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para instalar o actualizar el paquete `virtualenv`.
 
 ```sh
-python -m pip install -U virtualenv
+python -m pip install --user -U virtualenv
 ```
 
 Una herramienta para crear entornos Python virtuales aislados.
