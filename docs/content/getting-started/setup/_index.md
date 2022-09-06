@@ -90,7 +90,7 @@ Cuenta con un sistema de gestión de paquetes para facilitar la instalación de 
 Para instalar Git ejecuta el comando siguiente desde la línea de comandos:
 
 ```sh
-choco install -y git
+choco install -y git --params "/SChannel /WindowsTerminalProfile /Symlinks /DefaultBranchName:main /Editor:VisualStudioCode /PseudoConsoleSupport"
 ```
 
 Git para Windows se enfoca en ofrecer un conjunto de herramientas nativas y livianas que brindan el conjunto completo de funciones de Git SCM a Windows al mismo tiempo que proporciona interfaces de usuario adecuadas para usuarios de Git experimentados y novatos por igual.
@@ -104,26 +104,6 @@ choco install -y python3
 ```
 
 Python 3.x es un lenguaje de programación que le permite trabajar más rápido e integrar sus sistemas de manera más efectiva. Puede aprender a usar Python 3.x y ver ganancias casi inmediatas en productividad y menores costos de mantenimiento.
-
-#### pip
-
-Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para actualizar la distribución de `pip` que viene con Python3.
-
-```sh
-python3 -m pip install -U pip
-```
-
-`pip` es el instalador de paquetes para Python. Puede usar `pip` para instalar paquetes desde el índice de paquetes de Python y otros índices.
-
-#### virtualenv
-
-Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para instalar o actualizar el paquete `virtualenv`.
-
-```sh
-python3 -m pip install -U virtualenv
-```
-
-Una herramienta para crear entornos Python `virtuales` aislados.
 
 ### ack
 
@@ -146,3 +126,27 @@ choco install -y tree
 Para instalar el comando `tree`, en la misma PowerShell de arriba ejecuta `choco install -y tree`.
 
 `tree` es un programa de listado de directorios recursivo que produce un listado de archivos indentado por profundidad, este puede er colorizado si la variable de entorno `LS_COLORS` esta activa para la salida de la terminal (tty). Sin argumentos, `tree` lista los archivos en el directorio actual. Cuando se pasan argumentos de directorio, `tree` lista todos los archivos y/o directorios encontrados en el directorio indicado. Cuando se completa el listado de todos los archivos/directorios encontrados, `tree` regresa el numero total de archivos y/o directorios listados.
+
+### pip
+
+Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para actualizar la distribución de `pip` que viene con Python3.
+
+```sh
+python -m pip install -U pip
+```
+
+{%notice info%}
+Sí `python` no es encontrado usa `python3`
+{%/notice%}
+
+`pip` es el instalador de paquetes para Python. Puede usar `pip` para instalar paquetes desde el índice de paquetes de Python y otros índices.
+
+#### virtualenv
+
+Usando una nueva terminal de Git Bash (instalado junto con `git`) ejecuta el siguiente comando para instalar o actualizar el paquete `virtualenv`.
+
+```sh
+python -m pip install -U virtualenv
+```
+
+Una herramienta para crear entornos Python virtuales aislados.
