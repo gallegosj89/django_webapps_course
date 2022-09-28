@@ -29,7 +29,7 @@ En caso de que utilices algún software de restauración de sistema (e.j. Deep F
 
 ## chocolatey
 
-Chocolatey (`choco`) es una administrador de paquetes para _Windows_ similar a lo que es `apt` en _Ubuntu_, `pacman` en _Arch_, o `yum` en _Fedora_, `brew` en _Mac OS_.
+Chocolatey (`choco`) es una administrador de paquetes para *Windows* similar a lo que es `apt` en *Ubuntu*, `pacman` en *Arch*, o `yum` en *Fedora*, `brew` en *Mac OS*.
 
 En general podemos utilizar `choco` para instalar todas las dependencias de este tutorial, pero siempre es mejor aprende a instalarlas por uno mismo. Aquí lo vamos a utilizar para instalar algunas utilizades que no tienen un instalador disponible y que solo pueden ser instaladas por medio de `choco`.
 
@@ -42,7 +42,7 @@ Para una guía siempre actualizada en ingles, ve a la [página oficial de instal
 2. Instala con powershell.exe
 
 {{%notice warning%}}
-**NOTA:** Asegurate de inspeccionar [https://chocolatey.org/install.ps1](https://chocolatey.org/install.ps1) antes de ejecutar cualquiera de los comandos abajo por seguridad. Chocolatey afirma que es seguro, pero tu deberías de verificar siempre la seguridad y contenido de **cualquier** script que provenga del internet y que no estés familiarizado. Todos estos comandos descargan un script para PowerShell y lo ejecutan en tu máquina. En Chocolatey se toman la seguridad muy en serio. [Lee mas sobre los protocolos de seguridad de Chocolatey](https://chocolatey.org/security).
+**NOTA:** Asegúrate de inspeccionar [https://chocolatey.org/install.ps1](https://chocolatey.org/install.ps1) antes de ejecutar cualquiera de los comandos abajo por seguridad. Chocolatey afirma que es seguro, pero tu deberías de verificar siempre la seguridad y contenido de **cualquier** script que provenga del internet y que no estés familiarizado. Todos estos comandos descargan un script para PowerShell y lo ejecutan en tu máquina. En Chocolatey se toman la seguridad muy en serio. [Lee mas sobre los protocolos de seguridad de Chocolatey](https://chocolatey.org/security).
 {{%/notice%}}
 
 Con PowerShell, debes asegurar que [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) no esta restringido. Te sugiero usar `Bypass` para sobrepasar la politica y poder instalar la cosas o `AllSiged` para un poco más de seguridad.
@@ -55,7 +55,7 @@ Ahora ejecuta el siguiente comando:
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-3. Pega y ejecuta el comando de arriba y presiona _Enter_.
+3. Pega y ejecuta el comando de arriba y presiona *Enter*.
 
 4. Espera algunos segundos a que el comando complete.
 
@@ -150,3 +150,51 @@ python -m pip install --user -U virtualenv
 ```
 
 Una herramienta para crear entornos Python virtuales aislados.
+
+## Configurando VSCode para trabajar con Python
+
+Procederemos a instalar algunas extensiones que nos facilitaran el trabajo con python en visual studio code. Para esto vamos al apartado de Extension en la barra de la izquierda <span style="color:orange">[1]</span>, posteriormente buscamos **python magic**.
+
+![python-magic](./image00.png)
+
+Procedemos a instalar Python Extension Pack <span style="color:orange">[2]</span> y Magic Python <span style="color:orange">[3]</span>. El primero incluye todo lo necesario para trabajar con Python y Django, y el segundo nos ayuda a resaltar la sintaxis en nuestro código cuando trabajamos.
+
+Es hora de instalar con `pip` algunas herramientas que nos ayudarán a formatear y revisar nuestro código cuando trabajos con python. Para esto vamos a abrir una terminal y ejecutar lso siguientes comandos.
+
+```sh
+$ python -m pip install --user black
+$ python -m pip install --user flake8
+```
+
+**Black** es una herramienta que re-acomoda nuestro código de acuerdo a las reglas del PEP-8. **Flake8** es un linter, lo cual significaque es una herramienta que nos marca errores y advertencias cuando estamos haciendo algo mál en nuestro código.
+
+El siguiente paso es añadir a nuestra variable entorno **PATH** el directorio donde se encuentran estas herramientas para que sean encontradas por otros programas. Para esto presiona la tecla Windows y busca *environment variables* (*variables de entorno* en español), abrir la opción que salga.
+
+Aquí vamos a presionar el botón **Environment Variables ...** <span style="color:orange">[1]</span> luego en la variables del usuario vamos a buscar *path* <span style="color:orange">[2]</span> seleccionarlo y darle al botón **Edit...** <span style="color:orange">[3]</span>. Aquí vamos a crear una nueva entrada con el botón **New** <span style="color:orange">[4]</span>. El posible contenido de esta variable deberia de ser donde se están instalando las herramientas de Python cuando usamos `pip`, en mi caso la ruta es `%APPDATA%\Python\Python310\Scripts` <span style="color:orange">[5]</span> pero para ti podria ser diferente. Intenta utilizar el explorador de Windows e ir a esta ruta para validar que aquí se encuentran los archivos `black.exe` y `flake8.exe`.
+
+![environment](./image01.png)
+
+Una vez el *Path* está configurado puedes cerrar y abrir de nuevo la terminal para que surtan efecto los cambios. Ahora ejecuta los siguientes comandos.
+
+```sh
+$ where black
+$ where flake8
+```
+
+Deberían salir las rutas a estos archivos, que son las mismas que verificamos antes. Si no salen estas rutas y te da el mensaje de que no fue encontrado, entonces tienes algo mal en la entradaque creaste, intenta corregirlo utilizando la ruta correcta.
+
+Ahora configuraremos VSCode para utilizar estas herramientas, ve al menu engrane en la esquina inferior izquierda y busca *settings*.
+
+![settings-menu](./image02.png)
+
+Ahora buscaremos todos los settings relacionados con Python utilizando la barra de busqueda.
+
+![settings-search](./image03.png)
+
+Ahora en los resultados intenta cambiar los settings relacionados con Black, hay que poner la ruta correcta al archivo. Estas configuraciones podrían no estar en el mismo orden que aquí se muestran.
+
+![settings-black](./image04.png)
+
+Por último en los resultados intenta cambiar los settings relacionados con Flake8, hay que poner la ruta correcta al archivo. Estas configuraciones podrían no estar en el mismo orden que aquí se muestran.
+
+![settings-flake8](./image05.png)
