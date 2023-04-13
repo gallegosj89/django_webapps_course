@@ -17,7 +17,13 @@ Recuerda entrar al directorio de tu proyecto, puedes llegar allí con `cd ~/djan
 python -m pip install django-crispy-forms
 ```
 
-Ahora modificamos nuestro archivo `settings.py` donde habilitaremos la librería. Primero busca la lista `INSTALLED_APPS` y modificarla para que se vea de la siguiente manera.
+Desde la versión 2.0 de *Crispy Forms* la utilización de frontend frameworks se ha separado en diferentes paquetes de templates, por lo que al estar utilizando `Bootstrap3` necesitamos el paquete correspondiente de *Crispy Forms*. Lo instalamos con el siguiente comando.
+
+```bash
+python -m pip install crispy-bootstrap3
+```
+
+Ahora modificamos nuestro archivo `settings.py` donde habilitaremos la la aplicación de crispy y los templates de crispy. Primero busca la lista `INSTALLED_APPS` y modificarla para que se vea de la siguiente manera.
 
 ```python
 INSTALLED_APPS = [
@@ -28,13 +34,15 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "crispy_forms",
+    "crispy_bootstrap3",
     "blog.apps.BlogConfig",
 ]
 ```
 
-Ahora al final de tu archivo `settings.py` añade la siguiente linea:
+Ahora al final de tu archivo `settings.py` añade las siguientes líneas:
 
 ```python
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap3'
 CRISPY_TEMPLATE_PACK="bootstrap3"
 ```
 
