@@ -169,11 +169,7 @@ git pull
 workon gallegosj89.pythonanywhere.com
 ```
 
-Aquí también tenemos que instalar el paquete _django-crispy-forms_.
-
-```bash
-python -m pip install django-crispy-forms
-```
+Recuerda que estamos usando las librerías _django-crispy-forms_ y _crispy-bootstrap3_, tenemos que instalarlas en nuestra instancia de PythonAnywhere.
 
 Debido a los cambios de hojas de estilos también hay que actualizar la colección de archivos estáticos.
 

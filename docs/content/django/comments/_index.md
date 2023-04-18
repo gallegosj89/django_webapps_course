@@ -349,6 +349,8 @@ cd ~/gallegosj89.pythonanywhere.com
 git pull
 ```
 
+Inicia el entorno virtual en tu instancia de PythonAnywhere con `workon <project>` y recuerda que al ser bases de datos diferentes, la local y la remota, aquí también tienes que migrar los cambios como lo hiciste antes con `makemigrations` y `migrate`.
+
 Debido a los cambios de hojas de estilos también hay que actualizar la colección de archivos estáticos.
 
 ```bash
