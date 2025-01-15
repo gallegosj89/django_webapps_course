@@ -1,7 +1,7 @@
 ---
 title: Desarrollo de Aplicaciones Web
 description: first page
-date: 2022-02-08T22:11:57.883Z
+date: 2024-10-08T22:11:57.883Z
 weight: 1
 ---
 
